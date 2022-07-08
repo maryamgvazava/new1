@@ -205,6 +205,10 @@ border-radius: 15px;
 
 }
 
+.hello:hover{
+  display: none;
+}
+
 
 /* footer */
 
