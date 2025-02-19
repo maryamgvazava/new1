@@ -174,7 +174,281 @@
      <!-- </div> -->  
   </div>
       <div class="row">
-        <div class="topbox col col-lg "></div></div>   
+        <div class="topbox col col-lg ">
+            <br>
+<p> ### **Step 1: Divide 10.0.0.0/8 Network into Subnets** <br>
+We divide the 10.0.0.0/8 network into 4 subnets:<br>
+1. **Subnet 1 (VLAN 50 & VLAN 60 - IT & HR)** → 10.0.0.0/10<br>
+2. **Subnet 2 (VLAN 70 & VLAN 80 - Sales & LAW)** → 10.64.0.0/10<br>
+3. **Subnet 3 (Serial Link between R1 & R2)** → 192.168.20.0/24<br>
+4. **Subnet 4 (Other Use)** → 10.128.0.0/10<br>
+
+#### Example Calculation:<br>
+- Subnet 1: 10.0.0.0/10<br>
+  - Network Address: 10.0.0.0<br>
+  - Subnet Mask: 255.192.0.0 (10.0.0.0 to 10.63.255.255)<br>
+- Subnet 2: 10.64.0.0/10<br>
+  - Network Address: 10.64.0.0<br>
+  - Subnet Mask: 255.192.0.0 (10.64.0.0 to 10.127.255.255)<br>
+- Subnet 3: 192.168.20.0/24<br>
+  - Network Address: 192.168.20.0<br>
+  - Subnet Mask: 255.255.255.0<br>
+- Subnet 4: 10.128.0.0/10<br>
+  - Network Address: 10.128.0.0<br>
+  - Subnet Mask: 255.192.0.0 (10.128.0.0 to 10.191.255.255)<br>
+
+### **Step 2: Assign Hostnames to Devices**<br>
+1. **On Routers (R1, R2)**:<br>
+    ```
+    R1(config)# hostname R1<br>
+    R2(config)# hostname R2<br>
+    ```
+2. **On Switches (S1, S2, S3, S4, S5, S6)**:<br>
+    ```
+    S1(config)# hostname S1<br>
+    S2(config)# hostname S2<br>
+    S3(config)# hostname S3<br>
+    S4(config)# hostname S4<br>
+    S5(config)# hostname S5<br>
+    S6(config)# hostname S6<br>
+    ```
+
+### **Step 3: Configure VLANs on Switches**<br>
+- **For VLAN 50 (IT) and VLAN 60 (HR) on switches S1, S2, and S5**:<br>
+    ```
+    S1(config)# vlan 50<br>
+    S1(config-vlan)# name IT<br>
+    S1(config)# vlan 60<br>
+    S1(config-vlan)# name HR<br>
+
+    S2(config)# vlan 50<br>
+    S2(config-vlan)# name IT<br>
+    S2(config)# vlan 60<br>
+    S2(config-vlan)# name HR<br>
+
+    S5(config)# vlan 50<br>
+    S5(config-vlan)# name IT<br>
+    S5(config)# vlan 60<br>
+    S5(config-vlan)# name HR<br>
+    ```
+
+- **For VLAN 70 (Sales) and VLAN 80 (LAW) on switches S3, S4, and S6**:<br>
+    ```
+    S3(config)# vlan 70<br>
+    S3(config-vlan)# name Sales<br>
+    S3(config)# vlan 80<br>
+    S3(config-vlan)# name LAW<br>
+
+    S4(config)# vlan 70<br>
+    S4(config-vlan)# name Sales<br>
+    S4(config)# vlan 80<br>
+    S4(config-vlan)# name LAW<br>
+
+    S6(config)# vlan 70<br>
+    S6(config-vlan)# name Sales<br>
+    S6(config)# vlan 80<br>
+    S6(config-vlan)# name LAW<br>
+    ```
+
+### **Step 4: Configure Subinterfaces for VLANs on Routers**<br>
+- **For R1:**<br>
+    ```
+    R1(config)# interface GigabitEthernet0/0.50<br>
+    R1(config-subif)# encapsulation dot1Q 50<br>
+    R1(config-subif)# ip address 10.0.0.1 255.255.255.192<br>
+    R1(config-subif)# no shutdown<br>
+
+    R1(config)# interface GigabitEthernet0/0.60<br>
+    R1(config-subif)# encapsulation dot1Q 60<br>
+    R1(config-subif)# ip address 10.0.0.65 255.255.255.192<br>
+    R1(config-subif)# no shutdown<br>
+    ```
+
+- **For R2:**<br>
+    ```
+    R2(config)# interface GigabitEthernet0/0.70<br>
+    R2(config-subif)# encapsulation dot1Q 70<br>
+    R2(config-subif)# ip address 10.64.0.1 255.255.255.192<br>
+    R2(config-subif)# no shutdown<br>
+
+    R2(config)# interface GigabitEthernet0/0.80<br>
+    R2(config-subif)# encapsulation dot1Q 80<br>
+    R2(config-subif)# ip address 10.64.0.65 255.255.255.192<br>
+    R2(config-subif)# no shutdown<br>
+    ```
+
+### **Step 5: Configure Serial Interface Between R1 and R2**<br>
+- **For R1 (Serial 0/0/0):**<br>
+    ```
+    R1(config)# interface Serial0/0/0<br>
+    R1(config-if)# ip address 192.168.20.1 255.255.255.0<br>
+    R1(config-if)# clock rate 64000<br>
+    R1(config-if)# no shutdown<br>
+    ```
+
+- **For R2 (Serial 0/0/0):**<br>
+    ```
+    R2(config)# interface Serial0/0/0<br>
+    R2(config-if)# ip address 192.168.20.2 255.255.255.0<br>
+    R2(config-if)# no shutdown<br>
+    ```
+
+### **Step 6: Configure DHCP on R2**<br>
+- Exclude IP range for DHCP:<br>
+    ```
+    R2(config)# ip dhcp excluded-address 10.0.0.1 10.0.0.10<br>
+    ```
+
+- **For VLAN 50**:<br>
+    ```
+    R2(config)# ip dhcp pool VLAN50<br>
+    R2(dhcp-config)# network 10.0.0.0 255.255.255.192<br>
+    R2(dhcp-config)# default-router 10.0.0.1<br>
+    ```
+
+- **For VLAN 60**:<br>
+    ```
+    R2(config)# ip dhcp pool VLAN60<br>
+    R2(dhcp-config)# network 10.0.0.64 255.255.255.192<br>
+    R2(dhcp-config)# default-router 10.0.0.65<br>
+    ```
+
+- **For VLAN 70**:<br>
+    ```
+    R2(config)# ip dhcp pool VLAN70<br>
+    R2(dhcp-config)# network 10.64.0.0 255.255.255.192<br>
+    R2(dhcp-config)# default-router 10.64.0.1<br>
+    ```
+
+- **For VLAN 80**:<br>
+    ```
+    R2(config)# ip dhcp pool VLAN80<br>
+    R2(dhcp-config)# network 10.64.0.64 255.255.255.192<br>
+    R2(dhcp-config)# default-router 10.64.0.65<br>
+    ```
+
+### **Step 7: Configure Trunk Ports on Switches**<br>
+- For inter-switch and router-to-switch connections:<br>
+    ```
+    S1(config)# interface GigabitEthernet0/1<br>
+    S1(config-if)# switchport mode trunk<br>
+
+    S2(config)# interface GigabitEthernet0/1<br>
+    S2(config-if)# switchport mode trunk<br>
+
+    S5(config)# interface GigabitEthernet0/1<br>
+    S5(config-if)# switchport mode trunk<br>
+
+    S3(config)# interface GigabitEthernet0/1<br>
+    S3(config-if)# switchport mode trunk<br>
+
+    S4(config)# interface GigabitEthernet0/1<br>
+    S4(config-if)# switchport mode trunk<br>
+
+    S6(config)# interface GigabitEthernet0/1<br>
+    S6(config-if)# switchport mode trunk<br>
+    ```
+
+### **Step 8: Configure Access Ports for PCs**<br>
+- **For PC connections in VLAN 50, 60, 70, 80**:<br>
+    ```
+    S1(config)# interface FastEthernet0/1<br>
+    S1(config-if)# switchport mode access<br>
+    S1(config-if)# switchport access vlan 50<br>
+
+    S2(config)# interface FastEthernet0/1<br>
+    S2(config-if)# switchport mode access<br>
+    S2(config-if)# switchport access vlan 60<br>
+
+    S3(config)# interface FastEthernet0/1<br>
+    S3(config-if)# switchport mode access<br>
+    S3(config-if)# switchport access vlan 70<br>
+
+    S4(config)# interface FastEthernet0/1<br>
+    S4(config-if)# switchport mode access<br>
+    S4(config-if)# switchport access vlan 80<br>
+    ```
+
+### **Step 9: Enable SSH on Routers**<br>
+- **For R1 and R2:**<br>
+    ```
+    R1(config)# username admin privilege 15 secret cisco<br>
+    R1(config)# ip domain-name cisco.com<br>
+    R1(config)# crypto key generate rsa<br>
+    R1(config)# ip ssh version 2<br>
+    R1(config)# line vty 0 4<br>
+    R1(config-line)# login local<br>
+    R1(config-line)# transport input ssh<br>
+
+    R2(config)# username admin privilege 15 secret cisco<br>
+    R2(config)# ip domain-name cisco.com<br>
+    R2(config)# crypto key generate rsa<br>
+    R2(config)# ip ssh version 2<br>
+    R2(config)# line vty 0 4<br>
+    R2(config-line)# login local<br>
+    R2(config-line)# transport input ssh<br>
+    ```
+
+### **Step 10: Set Console and Privileged Mode Passwords**<br>
+- **For R1 and R2:**<br>
+    ```
+    R1(config)# line console 0<br>
+    R1(config-line)# password class<br>
+    R1(config-line)# login<br>
+    R1(config)# enable secret cisco<br>
+
+    R2(config)# line console 0<br>
+    R2(config-line)# password class<br>
+    R2(config-line)# login<br>
+    R2(config)# enable secret cisco<br>
+    ```
+
+### **Step 11: Encrypt Passwords**<br>
+- **For R1 and R2:**<br>
+    ```
+    R1(config)# service password-encryption<br>
+    R2(config)# service password-encryption<br>
+    ```
+
+### **Step 12: Configure DNS on Server**<br>
+- On Server:<br>
+    ```
+    Server(config)# ip dns server<br>
+    Server(config)# ip host cisco.com 10.0.0.100<br>
+    ```
+
+### **Step 13: Restrict PC3 from Web Service Using ACL**<br>
+- On R2:<br>
+    ```
+    R2(config)# access-list 100 deny tcp host 10.0.0.3 any eq 80<br>
+    R2(config)# access-list 100 permit ip any any<br>
+    R2(config)# interface GigabitEthernet0/0<br>
+    R2(config-if)# ip access-group 100 in<br>
+    ```
+
+### **Step 14: Backup Router Configurations to TFTP**<br>
+- **For R1:**<br>
+    ```
+    R1# copy running-config tftp<br>
+    Enter TFTP server address: 10.0.0.200<br>
+    ```
+
+- **For R2:**<br>
+    ```
+    R2# copy running-config tftp<br>
+    Enter TFTP server address: 10.0.0.200<br>
+    ```
+
+### **Final Step: Save Configuration**<br>
+- **For both routers:**<br>
+    ```
+    R1# write memory<br>
+    R2# write memory<br>
+    ``<br>` 
+
+This provides the full configuration based on your setup.
+            </p> 
+        </div></div>   
     <div class="row">
       <div class="topbox col col-lg"></div>
       <div class="topbox col col-lg"></div>
