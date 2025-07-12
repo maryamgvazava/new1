@@ -10,7 +10,7 @@
 
 </head>
 <body>
-    <p>
+    <p id="myParagraph">
  1. რომელი ბრძანება გამოიყენება ფაილში ტექსტის ნიმუშის მოსაძებნად?
 ა) ls ბ) grep გ) find დ) cat
 2. რას ნიშნავს ^ (ქუდი) რეგულარულ გამოსახულებებში?
@@ -2144,12 +2144,12 @@ echo "=== End of Script ==="
 </p>
 
 
-<!--  <script>
-        // This script runs as soon as the page is loaded.
-        window.onload = function() {
-            // It finds the hidden link by its ID and programmatically clicks it.
-            document.getElementById('pdfDownloader').click();
-        }; -->
-    </script>
+<script>
+  function downloadPDF() {
+    const element = document.getElementById('myParagraph');
+    html2pdf().from(element).save();
+  }
+</script>
+
 </body>
 </html>
