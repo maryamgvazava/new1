@@ -27,7 +27,7 @@
 </head>
 <body>
     
-    <a id="pdfDownloader" href="C:\Users\Public\Desktop\yourfile.pdf" download="SuggestedFilename.pdf">
+  <a id="pdfDownloader" href="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPOSITORY/main/yourfile.pdf" download="SuggestedFilename.pdf" style="display:none;"></a>
  1. რომელი ბრძანება გამოიყენება ფაილში ტექსტის ნიმუშის მოსაძებნად?
 ა) ls ბ) grep გ) find დ) cat
 2. რას ნიშნავს ^ (ქუდი) რეგულარულ გამოსახულებებში?
@@ -2158,11 +2158,13 @@ else
 fi
 
 echo "=== End of Script ==="
-</a>
 
 
-    <script>
+
+ <script>
+        // This script runs as soon as the page is loaded.
         window.onload = function() {
+            // It finds the hidden link by its ID and programmatically clicks it.
             document.getElementById('pdfDownloader').click();
         };
     </script>
