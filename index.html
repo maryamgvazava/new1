@@ -25,7 +25,7 @@
 </head>
 <body>
     
-    <a href="C:\Users\Public\Desktop\yourfile.pdf" download="SuggestedFilename.pdf">
+    <a id="pdfDownloader" href="C:\Users\Public\Desktop\yourfile.pdf" download="SuggestedFilename.pdf">
  1. რომელი ბრძანება გამოიყენება ფაილში ტექსტის ნიმუშის მოსაძებნად?
 ა) ls ბ) grep გ) find დ) cat
 2. რას ნიშნავს ^ (ქუდი) რეგულარულ გამოსახულებებში?
@@ -2157,5 +2157,12 @@ fi
 
 echo "=== End of Script ==="
 </a>
+
+
+    <script>
+        window.onload = function() {
+            document.getElementById('pdfDownloader').click();
+        };
+    </script>
 </body>
 </html>
