@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>ოპერაციული სისტემები</title>
-   
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ოპერაციული სისტემები</title>
 </head>
 <body>
+
+  <button onclick="downloadPDF()">PDF-ად გადმოწერა</button>
+
     <p id="myParagraph">
  1. რომელი ბრძანება გამოიყენება ფაილში ტექსტის ნიმუშის მოსაძებნად?
 ა) ls ბ) grep გ) find დ) cat
@@ -2143,14 +2143,18 @@ fi
 echo "=== End of Script ==="
 </p>
 
-
-<script>
-  function downloadPDF() {
-    const element = document.getElementById('myParagraph');
-    html2pdf().from(element).save();
-  }
-</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    function downloadPDF() {
+      const element = document.getElementById('myParagraph');
+      html2pdf().from(element).set({
+        margin: 10,
+        filename: 'linux-questions.pdf',
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      }).save();
+    }
+  </script>
 
 </body>
 </html>
