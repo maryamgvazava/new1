@@ -15,464 +15,2136 @@
 </head>
 <body>
 
- 
+ 1. რომელი ბრძანება გამოიყენება ფაილში ტექსტის ნიმუშის მოსაძებნად?
+ა) ls ბ) grep გ) find დ) cat
+2. რას ნიშნავს ^ (ქუდი) რეგულარულ გამოსახულებებში?
+a. ა) სტრიქონის ბოლო ბ) ნებისმიერი სიმბოლო გ) სტრიქონის
+დასაწყისი დ) ერთი ან მეტი გამეორება
+3. რომელი ბრძანება ჩაანაცვლებს "old_text"-ს "new_text"-ით ფაილში file.txt?
+ა) grep 'old_text' 'new_text' file.txt ბ) sed 's/old_text/new_text/' file.txt გ) replace 'old_text'
+'new_text' file.txt დ) awk '{gsub(/old_text/, "new_text")}1' file.txt
+4. რა მოქმედებას ასრულებს . (წერტილი) რეგულარულ
+გამოსახულებებში?
+a. ა) ნებისმიერი სიმბოლო (ხაზის გაწყვეტის გარდა) ბ) ციფრი გ)
+ასო დ) სიცარიელე
+5. რომელი ოფცია გამოიყენება grep-ში შედეგების ხაზის ნომრებით
+გამოსატანად?
+a. ა) -c ბ) -l გ) -n დ) -v
+6. რას ნიშნავს $ რეგულარულ გამოსახულებებში?
+a. ა) სტრიქონის დასაწყისი ბ) სტრიქონის ბოლო გ) ციფრი დ)
+სპეციალური სიმბოლო
+7. რომელი sed ბრძანება წაშლის ყველა ცარიელ ხაზს ფაილიდან?
+a. ა) sed '/^$/d' file.txt ბ) sed 's/ //g' file.txt გ) sed '1d' file.txt დ) sed 's/\n//g' file.txt
+სწორი
+8. რა დანიშნულება აქვს * (ვარსკვლავი) რეგულარულ გამოსახულებებში?
+ა) ნული ან მეტი გამეორება ბ) ერთი ან მეტი გამეორება გ) ზუსტად
+ერთი გამეორება დ) ნებისმიერი სიმბოლო
+9. რომელი grep ოფცია გამოიყენება შეუსაბამო ხაზების გამოსატანად?
+a. ა) -i ბ) -v გ) -w დ) -r
+    რა თქმა უნდა, წარმოგიდგენთ შეკითხვებს სწორი პასუხებით:
+
+---
+### Linux-ის ბრძანებები და რეგულარული გამოსახულებები (ნაწილი 2)
+
+10. **რომელი `sed` ბრძანება ბეჭდავს მხოლოდ პირველ 10 ხაზს?**
+    * ა) **sed '1,10p;d' file.txt**
+
+11. **რას ნიშნავს `+` (პლუსი) გაფართოებულ რეგულარულ გამოსახულებებში (extended regular expressions)?**
+    * ბ) **ერთი ან მეტი გამეორება**
+
+12. **რომელი `grep` ოფცია გამოიყენება რეკურსიულად, დირექტორიებში ძებნისთვის?**
+    * ბ) **-R**
+
+13. **რა ფუნქცია აქვს `[ ]` (კვადრატულ ფრჩხილებს) რეგულარულ გამოსახულებებში?**
+    * ბ) **სიმბოლოების დიაპაზონი**
+
+14. **რომელი `sed` ბრძანება დაამატებს "Hello" თითოეული ხაზის დასაწყისში?**
+    * ა) **sed 's/^/Hello /' file.txt**
+
+15. **რა მოქმედებას ასრულებს `|` (ვერტიკალური ხაზი) რეგულარულ გამოსახულებებში?**
+    * ბ) **ალტერნატივა ("ან")**
+
+16. **რომელი ბრძანება გამოიყენება ფაილების და დირექტორიების დასაარქივებლად Linux-ში?**
+    * გ) **tar**
+
+17. **რომელი ოფცია გამოიყენება `tar`-ში არქივის შესაქმნელად?**
+    * ბ) **-c**
+
+18. **რომელი ბრძანება გაშლის არქივს `archive.tar.gz` მიმდინარე დირექტორიაში?**
+    * ა) **tar -xvf archive.tar.gz**
+
+19. **რომელი შეკუმშვის პროგრამა გამოიყენება `tar` არქივების `.tar.gz` ფორმატში შესაკუმშად?**
+    * გ) **gzip**
+
+20. **რომელი ოფცია გამოიყენება `tar`-ში არქივის ფაილის სახელის დასაზუსტებლად?**
+    * გ) **-f**
+რა თქმა უნდა, წარმოგიდგენთ შეკითხვებს სწორი პასუხებით:
+
+---
+### Linux-ის ბრძანებები და არქივირება/შეკუმშვა
+
+21. **რომელი ბრძანება შეკუმშავს ფაილს `file.txt` და შექმნის `file.txt.gz`-ს?**
+    * ბ) **gzip file.txt**
+
+22. **რომელი ბრძანება დაათვალიერებს არქივის `archive.tar` შიგთავსს მისი გაშლის გარეშე?**
+    * ბ) **tar -t archive.tar**
+
+23. **რა გაფართოებას იყენებს bzip2 შეკუმშული ფაილებისთვის?**
+    * გ) **.bz2**
+
+24. **რომელი ბრძანება შექმნის არქივს `myarchive.tar` დირექტორია `mydir`-დან?**
+    * ა) **tar -cvf myarchive.tar mydir**
+
+25. **რა უპირატესობა აქვს `xz` შეკუმშვას `gzip`-თან შედარებით?**
+    * გ) **უფრო მაღალი შეკუმშვის კოეფიციენტი**
+
+26. **რომელი ბრძანება შექმნის `.zip` არქივს `myfiles.zip` და დაამატებს `file1.txt` და `file2.txt`-ს?**
+    * ა) **zip myfiles.zip file1.txt file2.txt**
+
+27. **რომელი ოფცია გამოიყენება `tar`-ში არქივირების პროცესის დეტალურად საჩვენებლად?**
+    * გ) **-v**
+
+28. **რომელი ბრძანება გახსნის `archive.tar.bz2` არქივს?**
+    * ა) **tar -xvjf archive.tar.bz2**
+
+29. **რა განსხვავებაა `gzip`-სა და `zip`-ს შორის?**
+    * ა) **gzip აკუმშავს მხოლოდ ერთ ფაილს, zip – მრავალს.**
+
+30. **რომელი ბრძანება გამოიყენება `tar` არქივის შეკუმშვისთვის `gzip`-ის გამოყენებით?**
+    * ა) **tar -czf archive.tar.gz files**
+
+რა თქმა უნდა, წარმოგიდგენთ შეკითხვებს სწორი პასუხებით:
+
+---
+### Linux ტექსტური რედაქტორები: `vi` და `nano`
+
+31. **რომელი ბრძანება გამოიყენება `vi` რედაქტორიდან ცვლილებების შენახვის გარეშე გამოსასვლელად?**
+    * ბ) **:q!**
+
+32. **რა რეჟიმში შედიხართ `vi`-ში `i` ღილაკზე დაჭერით?**
+    * გ) **Insert Mode**
+
+33. **რომელი კლავიშთა კომბინაცია გამოიყენება `nano` რედაქტორში ფაილის შესანახად?**
+    * გ) **Ctrl + O**
+
+34. **რომელი ბრძანება გამოიყენება `vi`-ში ცვლილებების შესანახად და რედაქტორიდან გამოსასვლელად?**
+    * გ) **:wq**
+
+35. **რომელი კლავიშთა კომბინაცია გამოიყენება `nano` რედაქტორიდან გამოსასვლელად?**
+    * გ) **Ctrl + X**
+
+36. **რომელი ბრძანება გამოიყენება `vi`-ში კონკრეტულ ხაზზე გადასასვლელად (მაგალითად, მე-10 ხაზზე)?**
+    * გ) **:10**
+
+37. **რა არის `nano` რედაქტორის მთავარი უპირატესობა `vi`-თან შედარებით დამწყებთათვის?**
+    * გ) **უფრო მარტივი და ინტუიციური ინტერფეისი**
+
+38. **რომელი კლავიში გამოიყენება `vi` Command Mode-ში Insert Mode-დან დასაბრუნებლად?**
+    * გ) **Esc**
+
+39. **რომელი კლავიშთა კომბინაცია გამოიყენება `nano` რედაქტორში ტექსტის მოსაძებნად?**
+    * ბ) **Ctrl + W**
+
+40. **რომელი ბრძანება გამოიყენება `vi`-ში ხაზის წასაშლელად Command Mode-ში?**
+    * ბ) **dd**
+
+41. **რომელი კლავიშთა კომბინაცია გამოიყენება `nano` რედაქტორში ტექსტის დასაკოპირებლად?**
+    * გ) **Ctrl + K (marks line), Alt + 6 (copies)**
+
+რა თქმა უნდა, წარმოგიდგენთ შეკითხვებს სწორი პასუხებით:
+
+---
+### Linux ტექსტური რედაქტორები: `vi` და `nano` (გაგრძელება)
+
+42. **რა არის `vi` რედაქტორის Command Mode?**
+    * ბ) **რეჟიმი, სადაც შეგიძლიათ ბრძანებების გაცემა რედაქტორისთვის.**
+
+43. **რომელი კლავიშთა კომბინაცია გამოიყენება `nano` რედაქტორში ტექსტის ჩასასმელად (paste)?**
+    * გ) **Ctrl + U**
+
+44. **რომელი ბრძანება გამოიყენება `vi`-ში გაუქმებული ცვლილების დასაბრუნებლად (undo)?**
+    * ა) **u**
+
+45. **რა არის `nano` რედაქტორის ქვედა ნაწილში ნაჩვენები `^G Get Help`?**
+    * ბ) **დახმარების მენიუს გამოსაძახებელი კლავიშთა კომბინაცია.**
+
+---
+### Linux პროცესების მართვა
+
+46. **რომელი ბრძანება გამოიყენება Linux-ში მიმდინარე პროცესების სიის საჩვენებლად?**
+    * ბ) **ps**
+
+47. **რომელი ბრძანება აჩვენებს პროცესების დინამიურ, რეალურ დროში განახლებად სიას?**
+    * ბ) **top**
+
+48. **რა ინფორმაციას აჩვენებს `ps aux` ბრძანება?**
+    * ბ) **ყველა პროცესს, მათ შორის სხვა მომხმარებლების და სისტემურ პროცესებს.**
+
+49. **რომელი ბრძანება გამოიყენება პროცესის გასაჩერებლად მისი PID-ის (Process ID) გამოყენებით?**
+    * ბ) **kill**
+
+50. **რა განსხვავებაა `top`-სა და `htop`-ს შორის?**
+    * ბ) **htop არის უფრო ინტერაქტიული და მომხმარებლისთვის მოსახერხებელი.**
+
+რა თქმა უნდა, წარმოგიდგენთ შეკითხვებს სწორი პასუხებით:
+
+---
+### Linux პროცესების მართვა (გაგრძელება)
+
+51.  **რომელი სიგნალი გამოიყენება `kill` ბრძანებით პროცესის "ძალით" მოსაკლავად (იგნორირების გარეშე)?**
+    * გ) **SIGKILL (9)**
+
+52.  **რა დანიშნულება აქვს `jobs` ბრძანებას?**
+    * ა) **აჩვენებს ფონურ რეჟიმში გაშვებულ პროცესებს.**
+
+53.  **რომელი კლავიში გამოიყენება `top` ინტერფეისში პროცესების CPU-ს გამოყენების მიხედვით დასალაგებლად?**
+    * ბ) **P**
+
+54.  **რომელი ბრძანება გაგზავნის პროცესს ფონურ რეჟიმში?**
+    * ბ) **bg**
+
+55.  **რა არის PID?**
+    * ა) **Process Identifier - პროცესის უნიკალური საიდენტიფიკაციო ნომერი.**
+
+56.  **რომელი ბრძანება გამოიტანს `htop`-ში პროცესების ხის სტრუქტურას?**
+    * ა) **F5**
+
+57.  **რომელი ბრძანება წამოწევს ფონური პროცესიდან წინა პლანზე?**
+    * ბ) **fg**
+
+58.  **რა არის Zombie Process?**
+    * ბ) **პროცესი, რომელიც შეწყვეტილია, მაგრამ მისი მშობელი პროცესი ჯერ კიდევ ელოდება მის დასრულებას.**
+
+59.  **რომელი სიგნალი გაიგზავნება პროცესზე Ctrl + C-ის დაჭერისას?**
+    * გ) **SIGINT (2)**
+
+60.  **რა ინფორმაციას არ აჩვენებს `top` ბრძანება ნაგულისხმევად?**
+    * დ) **პროცესის მშობელი ID (PPID).**
+
+რა თქმა უნდა, წარმოგიდგენთ შეკითხვებს სწორი პასუხებით:
+
+---
+### Linux Runlevels, Systemd, GRUB და Cron
+
+61.  **რომელი გაშვების რეჟიმი (runlevel) გამოიყენება მრავალმომხმარებლიანი გრაფიკული ინტერფეისით მუშაობისთვის?**
+    * **Runlevel 5**
+
+62.  **systemd-ის კონტექსტში, რომელი "target" არის ტრადიციული Runlevel 3-ის ექვივალენტი?**
+    * **multi-user.target**
+
+63.  **რომელი ბრძანება გამოიყენება მიმდინარე გაშვების რეჟიმის (runlevel) შესამოწმებლად?**
+    * **runlevel (ძველ სისტემებში) ან systemctl get-default (systemd-ზე დაფუძნებულ სისტემებში)**
+
+64.  **რომელი systemd "target" არის ყველაზე დაბალი დონის, რაც საშუალებას აძლევს სისტემის ჩატვირთვას ფაილური სისტემის ხელმისაწვდომობით?**
+    * **basic.target**
+
+65.  **რომელი `systemctl` ბრძანება გამოიყენება სერვისის ჩასართავად, რათა ის ავტომატურად გაეშვას სისტემის ყოველი ჩატვირთვისას?**
+    * **systemctl enable [service_name]**
+
+66.  **რომელი `systemctl` ბრძანება გამოიყენება კონკრეტული სერვისის მიმდინარე სტატუსის სანახავად?**
+    * **systemctl status [service_name]**
+
+67.  **რა დანიშნულება აქვს `systemctl stop [service_name]` ბრძანებას?**
+    * **ის აჩერებს გაშვებულ სერვისს.**
+
+68.  **რომელი ბრძანება გამოიყენება ყველა გაშვებული systemd სერვისის ჩამონათვალის სანახავად?**
+    * **systemctl list-units --type=service --state=running**
+
+69.  **რა არის `systemctl daemon-reload` ბრძანების მთავარი დანიშნულება?**
+    * **ის ატვირთავს systemd კონფიგურაციის ფაილებს დისკიდან, რათა ცვლილებები ძალაში შევიდეს.**
+
+70.  **რომელი ბრძანებაა სწორი, რომ შეაჩეროთ სერვისი და გამორთოთ ის (ისე, რომ ის აღარ ჩაიტვირთოს სისტემის გადატვირთვისას)?**
+    * **systemctl stop [service_name] && systemctl disable [service_name]**
+
+---
+### GRUB (Grand Unified Bootloader)
+
+71.  **რა არის GRUB-ის ძირითადი ფუნქცია Linux სისტემაში?**
+    * **ის არის ჩამტვირთავი, რომელიც საშუალებას აძლევს მომხმარებელს აირჩიოს ოპერაციული სისტემა და ჩატვირთოს ის.**
+
+72.  **სად მდებარეობს GRUB-ის ძირითადი კონფიგურაციის ფაილი?**
+    * **/boot/grub/grub.cfg (ან /boot/grub2/grub.cfg ზოგიერთ დისტრიბუციაში)**
+
+73.  **რომელი ბრძანება გამოიყენება GRUB კონფიგურაციის ფაილის განახლებისთვის მას შემდეგ, რაც შეიცვლება სისტემის კონფიგურაცია (მაგალითად, ახალი კერნელის დაყენების შემდეგ)?**
+    * **update-grub (Debian/Ubuntu-ზე დაფუძნებულ სისტემებში) ან grub2-mkconfig -o /boot/grub2/grub.cfg (Red Hat/Fedora-ზე დაფუძნებულ სისტემებში)**
+
+74.  **GRUB-ის კონტექსტში, რა არის „Stage 1“?**
+    * **ის არის GRUB-ის ყველაზე პატარა ნაწილი, რომელიც ჩატვირთულია Master Boot Record-დან (MBR) ან GPT-დან და მისი მთავარი დანიშნულებაა Stage 2-ის ჩატვირთვა.**
+
+---
+### Cron და დაგეგმილი დავალებები
+
+75.  **რომელი ბრძანება გამოიყენება cron-ის დავალებების (crontab entries) რედაქტირებისთვის მიმდინარე მომხმარებლისთვის?**
+    * **crontab -e**
+
+76.  **cron-ის განრიგში, რომელი სიმბოლო აღნიშნავს "ყველა მნიშვნელობას" (e.g., ყოველ წუთს, ყოველ საათს)?**
+    * **\***
+
+77.  **რომელი ინსტრუმენტი გამოიყენება ერთჯერადი, მომავალში შესასრულებელი დავალებების დასაგეგმად?**
+    * **at**
+
+78.  **თუ გსურთ ბრძანების შესრულება ყოველ სამშაბათს, დილის 9:00 საათზე, რომელი cron ველის კონფიგურაცია იქნება სწორი კვირის დღისთვის?**
+    * **2 (რადგან კვირის დღეები იწყება 0-დან კვირა დღისთვის)**
+
+79.  **სად ინახება სისტემური დონის cron დავალებები (რომლებიც გავლენას ახდენს ყველა მომხმარებელზე)?**
+    * **/etc/crontab და /etc/cron.d/ დირექტორიაში**
+
+80.  **რა არის anacron-ის მთავარი უპირატესობა ტრადიციულ cron-თან შედარებით?**
+    * **Anacron უზრუნველყოფს, რომ დაგეგმილი დავალებები შესრულდეს მაშინაც კი, თუ კომპიუტერი გამორთული იყო დავალების დაგეგმილ დროს.**
 
 
-    Navigation Bar !! -->
-<!--     <nav class="navbar navbar-expand-lg navbar-danger ">
-        <div class="container-fluid cont" >
-          <img class="logo" src="./pics/logo.png" alt="" usemap="#logokmap">
-          <h1 class="logotitle">  D'oro </h1>
-          <div class="collapse navbar-collapse navsec  " >
-            <ul class="navbar-nav navpart">
-              <li class="navlists">
-                <a class="navlinks" href="">About</a>
-              </li>
-              <li>
-                <a class="navlinks1" href=""> Terms & Conditions</a>
-              </li>
-            </ul>
-            <form class="d-flex searchsec">
-              <input class="form-control me-2 gap navinp" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn1 btn-outline-dark submit" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </nav> -->
+    რა თქმა უნდა, წარმოგიდგენთ Linux-ის ბრძანებებს მომხმარებლების, ჯგუფების, ფაილის უფლებებისა და ატრიბუტების სამართავად:
 
-<!-- Navigation Bar !!
+-----
 
+### მომხმარებლის და ჯგუფის მართვა
 
+1.  **რომელი ბრძანებით შექმნით ახალ მომხმარებელ `ftp_user`-ს საშინაო დირექტორიის `/srv/ftp`-ით და სისტემური (არალოგირებადი) მომხმარებლის სახით?**
 
-<!-Sidebar>
-<!-- 
-
-<div class="sidebarhead navbar-header navbar navbar-expand-md"> 
-  <div class="sidebar">
-    <div class="logo_content">
-      <i class="fa-solid fa-bars" id="btn"></i>
-      <div class="logo">
-      </div>  
-    </div>
-  <ul class="nav_list">
-    <li>
-      <a href="">
-        <i class="fa-solid fa-user-gear"></i>
-        <span class="links_name">User</span>
-      </a>
-    </li>
-    <li>
-      <a href="">
-        <i class="fa-solid fa-envelope"></i>
-        <span class="links_name">Message</span>
-      </a>
-    </li>
-    <li>
-      <a href="">
-        <i class="fa-solid fa-chart-line"></i>
-        <span class="links_name">Analytics</span>
-      </a>
-    </li>
-    <li>
-      <a href="">
-        <i class="fa-solid fa-folder-closed"></i>
-        <span class="links_name">Files</span>
-      </a>
-    </li>
-    <li>
-      <a href="">
-        <i class="fa-solid fa-basket-shopping"></i>
-        <span class="links_name">Order</span>
-      </a>
-    </li>
-    <li>
-      <a href="">
-        <i class="fa-solid fa-heart-circle-check"></i>
-        <span class="links_name">Saved</span>
-      </a>
-    </li>
-    <li>
-      <a href="">
-        <i class="fa-solid fa-gears"></i>
-        <span class="links_name">Settings</span>
-      </a>
-    </li>
-  </ul>
-  </div>
-  
-    <div class="sidebar1   navbar-nav me-auto mb-2 mb-lg-0" id="">
-        <div class="showpart">
-    <div class="content">
-      <ul class="content-item">
-        <li>
-          <a href="">
-            <i class="fa-solid fa-user-gear"></i>
-            <span class="links_name">User</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <i class="fa-solid fa-envelope"></i>
-            <span class="links_name">Message</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <i class="fa-solid fa-chart-line"></i>
-            <span class="links_name">Analytics</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <i class="fa-solid fa-folder-closed"></i>
-            <span class="links_name">Files</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <i class="fa-solid fa-basket-shopping"></i>
-            <span class="links_name">Order</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <i class="fa-solid fa-heart-circle-check"></i>
-            <span class="links_name">Saved</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <i class="fa-solid fa-gears"></i>
-            <span class="links_name">Settings</span>
-          </a>
-        </li>
-      </ul>
-
-    </div>
-    <div class="social">
-      <a class="media" href="" > <i class="fa-brands fa-facebook-f media"></i></a>
-      <a  class="media" href=""><i class="fa-brands fa-instagram media"></i></a>
-      <a  class="media" href=""><i class="fa-brands fa-linkedin-in media"></i></a>
-      <a  class="media" href=""><i class="fa-brands fa-youtube media"></i></a>
-          </div>
-</div>
-</div> -->
-
-
-
-
-<!-- Sidebar -->
-
-<!-- <div class=" container-fluid mainpaper">
-
-<div class="mainrow">
-<div class="hellowdiv">
-  <!-- 
-<div data-aos="fade-up"
-     data-aos-anchor-placement="bottom-center"> -->
-<!--      <div class="hello">Hello There!</div>
-     <!-- </div> -->  
-<!--   </div> -->
-<!--       <div class="row"> --> --> -->
-        <div class="topbox col col-lg ">
-            <br>
-<p> ### **Step 1: Divide 10.0.0.0/8 Network into Subnets** <br>
-We divide the 10.0.0.0/8 network into 4 subnets:<br>
-1. **Subnet 1 (VLAN 50 & VLAN 60 - IT & HR)** → 10.0.0.0/10<br>
-2. **Subnet 2 (VLAN 70 & VLAN 80 - Sales & LAW)** → 10.64.0.0/10<br>
-3. **Subnet 3 (Serial Link between R1 & R2)** → 192.168.20.0/24<br>
-4. **Subnet 4 (Other Use)** → 10.128.0.0/10<br>
-
-#### Example Calculation:<br>
-- Subnet 1: 10.0.0.0/10<br>
-  - Network Address: 10.0.0.0<br>
-  - Subnet Mask: 255.192.0.0 (10.0.0.0 to 10.63.255.255)<br>
-- Subnet 2: 10.64.0.0/10<br>
-  - Network Address: 10.64.0.0<br>
-  - Subnet Mask: 255.192.0.0 (10.64.0.0 to 10.127.255.255)<br>
-- Subnet 3: 192.168.20.0/24<br>
-  - Network Address: 192.168.20.0<br>
-  - Subnet Mask: 255.255.255.0<br>
-- Subnet 4: 10.128.0.0/10<br>
-  - Network Address: 10.128.0.0<br>
-  - Subnet Mask: 255.192.0.0 (10.128.0.0 to 10.191.255.255)<br>
-
-### **Step 2: Assign Hostnames to Devices**<br>
-1. **On Routers (R1, R2)**:<br>
-    ```
-    R1(config)# hostname R1<br>
-    R2(config)# hostname R2<br>
-    ```
-2. **On Switches (S1, S2, S3, S4, S5, S6)**:<br>
-    ```
-    S1(config)# hostname S1<br>
-    S2(config)# hostname S2<br>
-    S3(config)# hostname S3<br>
-    S4(config)# hostname S4<br>
-    S5(config)# hostname S5<br>
-    S6(config)# hostname S6<br>
-    ```
-
-### **Step 3: Configure VLANs on Switches**<br>
-- **For VLAN 50 (IT) and VLAN 60 (HR) on switches S1, S2, and S5**:<br>
-    ```
-    S1(config)# vlan 50<br>
-    S1(config-vlan)# name IT<br>
-    S1(config)# vlan 60<br>
-    S1(config-vlan)# name HR<br>
-
-    S2(config)# vlan 50<br>
-    S2(config-vlan)# name IT<br>
-    S2(config)# vlan 60<br>
-    S2(config-vlan)# name HR<br>
-
-    S5(config)# vlan 50<br>
-    S5(config-vlan)# name IT<br>
-    S5(config)# vlan 60<br>
-    S5(config-vlan)# name HR<br>
-    ```
-
-- **For VLAN 70 (Sales) and VLAN 80 (LAW) on switches S3, S4, and S6**:<br>
-    ```
-    S3(config)# vlan 70<br>
-    S3(config-vlan)# name Sales<br>
-    S3(config)# vlan 80<br>
-    S3(config-vlan)# name LAW<br>
-
-    S4(config)# vlan 70<br>
-    S4(config-vlan)# name Sales<br>
-    S4(config)# vlan 80<br>
-    S4(config-vlan)# name LAW<br>
-
-    S6(config)# vlan 70<br>
-    S6(config-vlan)# name Sales<br>
-    S6(config)# vlan 80<br>
-    S6(config-vlan)# name LAW<br>
-    ```
-
-### **Step 4: Configure Subinterfaces for VLANs on Routers**<br>
-- **For R1:**<br>
-    ```
-    R1(config)# interface GigabitEthernet0/0.50<br>
-    R1(config-subif)# encapsulation dot1Q 50<br>
-    R1(config-subif)# ip address 10.0.0.1 255.255.255.192<br>
-    R1(config-subif)# no shutdown<br>
-
-    R1(config)# interface GigabitEthernet0/0.60<br>
-    R1(config-subif)# encapsulation dot1Q 60<br>
-    R1(config-subif)# ip address 10.0.0.65 255.255.255.192<br>
-    R1(config-subif)# no shutdown<br>
-    ```
-
-- **For R2:**<br>
-    ```
-    R2(config)# interface GigabitEthernet0/0.70<br>
-    R2(config-subif)# encapsulation dot1Q 70<br>
-    R2(config-subif)# ip address 10.64.0.1 255.255.255.192<br>
-    R2(config-subif)# no shutdown<br>
-
-    R2(config)# interface GigabitEthernet0/0.80<br>
-    R2(config-subif)# encapsulation dot1Q 80<br>
-    R2(config-subif)# ip address 10.64.0.65 255.255.255.192<br>
-    R2(config-subif)# no shutdown<br>
-    ```
-
-### **Step 5: Configure Serial Interface Between R1 and R2**<br>
-- **For R1 (Serial 0/0/0):**<br>
-    ```
-    R1(config)# interface Serial0/0/0<br>
-    R1(config-if)# ip address 192.168.20.1 255.255.255.0<br>
-    R1(config-if)# clock rate 64000<br>
-    R1(config-if)# no shutdown<br>
-    ```
-
-- **For R2 (Serial 0/0/0):**<br>
-    ```
-    R2(config)# interface Serial0/0/0<br>
-    R2(config-if)# ip address 192.168.20.2 255.255.255.0<br>
-    R2(config-if)# no shutdown<br>
-    ```
-
-### **Step 6: Configure DHCP on R2**<br>
-- Exclude IP range for DHCP:<br>
-    ```
-    R2(config)# ip dhcp excluded-address 10.0.0.1 10.0.0.10<br>
-    ```
-
-- **For VLAN 50**:<br>
-    ```
-    R2(config)# ip dhcp pool VLAN50<br>
-    R2(dhcp-config)# network 10.0.0.0 255.255.255.192<br>
-    R2(dhcp-config)# default-router 10.0.0.1<br>
-    ```
-
-- **For VLAN 60**:<br>
-    ```
-    R2(config)# ip dhcp pool VLAN60<br>
-    R2(dhcp-config)# network 10.0.0.64 255.255.255.192<br>
-    R2(dhcp-config)# default-router 10.0.0.65<br>
+    ```bash
+    sudo useradd -r -s /sbin/nologin -d /srv/ftp ftp_user
     ```
 
-- **For VLAN 70**:<br>
-    ```
-    R2(config)# ip dhcp pool VLAN70<br>
-    R2(dhcp-config)# network 10.64.0.0 255.255.255.192<br>
-    R2(dhcp-config)# default-router 10.64.0.1<br>
-    ```
+2.  **როგორ დაამატებთ მომხმარებელ `jane`-ს `admin` ჯგუფში, ისე რომ ის გახდეს მისი ერთადერთი დამატებითი ჯგუფი? (ყველა სხვა დამატებითი ჯგუფი უნდა წაიშალოს)**
 
-- **For VLAN 80**:<br>
-    ```
-    R2(config)# ip dhcp pool VLAN80<br>
-    R2(dhcp-config)# network 10.64.0.64 255.255.255.192<br>
-    R2(dhcp-config)# default-router 10.64.0.65<br>
+    ```bash
+    sudo usermod -G admin jane
     ```
 
-### **Step 7: Configure Trunk Ports on Switches**<br>
-- For inter-switch and router-to-switch connections:<br>
-    ```
-    S1(config)# interface GigabitEthernet0/1<br>
-    S1(config-if)# switchport mode trunk<br>
+3.  **რომელი ბრძანებით შეცვლით ფაილის `/etc/hosts` უფლებებს `rw-r--r--` ფორმატში?**
 
-    S2(config)# interface GigabitEthernet0/1<br>
-    S2(config-if)# switchport mode trunk<br>
-
-    S5(config)# interface GigabitEthernet0/1<br>
-    S5(config-if)# switchport mode trunk<br>
-
-    S3(config)# interface GigabitEthernet0/1<br>
-    S3(config-if)# switchport mode trunk<br>
-
-    S4(config)# interface GigabitEthernet0/1<br>
-    S4(config-if)# switchport mode trunk<br>
-
-    S6(config)# interface GigabitEthernet0/1<br>
-    S6(config-if)# switchport mode trunk<br>
+    ```bash
+    sudo chmod 644 /etc/hosts
     ```
 
-### **Step 8: Configure Access Ports for PCs**<br>
-- **For PC connections in VLAN 50, 60, 70, 80**:<br>
-    ```
-    S1(config)# interface FastEthernet0/1<br>
-    S1(config-if)# switchport mode access<br>
-    S1(config-if)# switchport access vlan 50<br>
+4.  **თქვენ გაქვთ დირექტორია `/data/projects`. როგორ შეცვლით მის ჯგუფურ მფლობელობას `project_managers`-ზე, რეკურსიულად, და ამავე დროს, დააყენებთ SetGID (SGID) ბიტს, რათა ახალი ფაილები მემკვიდრეობით იღებდნენ ამ ჯგუფს?**
 
-    S2(config)# interface FastEthernet0/1<br>
-    S2(config-if)# switchport mode access<br>
-    S2(config-if)# switchport access vlan 60<br>
-
-    S3(config)# interface FastEthernet0/1<br>
-    S3(config-if)# switchport mode access<br>
-    S3(config-if)# switchport access vlan 70<br>
-
-    S4(config)# interface FastEthernet0/1<br>
-    S4(config-if)# switchport mode access<br>
-    S4(config-if)# switchport access vlan 80<br>
+    ```bash
+    sudo chgrp -R project_managers /data/projects
+    sudo chmod -R g+s /data/projects
     ```
 
-### **Step 9: Enable SSH on Routers**<br>
-- **For R1 and R2:**<br>
-    ```
-    R1(config)# username admin privilege 15 secret cisco<br>
-    R1(config)# ip domain-name cisco.com<br>
-    R1(config)# crypto key generate rsa<br>
-    R1(config)# ip ssh version 2<br>
-    R1(config)# line vty 0 4<br>
-    R1(config-line)# login local<br>
-    R1(config-line)# transport input ssh<br>
+5.  **როგორ ჩამოთვლით ყველა არსებულ ჯგუფს სისტემაში GID-ის მიხედვით დალაგებული სახით?**
 
-    R2(config)# username admin privilege 15 secret cisco<br>
-    R2(config)# ip domain-name cisco.com<br>
-    R2(config)# crypto key generate rsa<br>
-    R2(config)# ip ssh version 2<br>
-    R2(config)# line vty 0 4<br>
-    R2(config-line)# login local<br>
-    R2(config-line)# transport input ssh<br>
+    ```bash
+    getent group | sort -t: -k3n
     ```
 
-### **Step 10: Set Console and Privileged Mode Passwords**<br>
-- **For R1 and R2:**<br>
-    ```
-    R1(config)# line console 0<br>
-    R1(config-line)# password class<br>
-    R1(config-line)# login<br>
-    R1(config)# enable secret cisco<br>
+6.  **რომელი ბრძანებით დააკავშირებთ მომხმარებელ `builder`-ს `developers` და `testers` ჯგუფებთან, ისე რომ ორივე იყოს დამატებითი ჯგუფი და ძირითადი ჯგუფი უცვლელი დარჩეს?**
 
-    R2(config)# line console 0<br>
-    R2(config-line)# password class<br>
-    R2(config-line)# login<br>
-    R2(config)# enable secret cisco<br>
+    ```bash
+    sudo usermod -aG developers,testers builder
     ```
 
-### **Step 11: Encrypt Passwords**<br>
-- **For R1 and R2:**<br>
-    ```
-    R1(config)# service password-encryption<br>
-    R2(config)# service password-encryption<br>
+7.  **თქვენ გჭირდებათ, რომ `/var/www/html/index.html` ფაილს ჰქონდეს 640 უფლებები (`rw-r-----`). დაწერეთ ერთი ბრძანება.**
+
+    ```bash
+    sudo chmod 640 /var/www/html/index.html
     ```
 
-### **Step 12: Configure DNS on Server**<br>
-- On Server:<br>
-    ```
-    Server(config)# ip dns server<br>
-    Server(config)# ip host cisco.com 10.0.0.100<br>
+8.  **როგორ წაშლით მომხმარებელ `temp_user`-ს მისი საშინაო დირექტორიითურთ, მაგრამ არ წაშლით მის მიერ შექმნილ ჯგუფს?**
+
+    ```bash
+    sudo userdel -r temp_user
     ```
 
-### **Step 13: Restrict PC3 from Web Service Using ACL**<br>
-- On R2:<br>
-    ```
-    R2(config)# access-list 100 deny tcp host 10.0.0.3 any eq 80<br>
-    R2(config)# access-list 100 permit ip any any<br>
-    R2(config)# interface GigabitEthernet0/0<br>
-    R2(config-if)# ip access-group 100 in<br>
+9.  **რომელი ბრძანებით შეამოწმებთ, რომელ ჯგუფებშია გაწევრიანებული მიმდინარე მომხმარებელი?**
+
+    ```bash
+    groups
     ```
 
-### **Step 14: Backup Router Configurations to TFTP**<br>
-- **For R1:**<br>
-    ```
-    R1# copy running-config tftp<br>
-    Enter TFTP server address: 10.0.0.200<br>
+    ან
+
+    ```bash
+    id -Gn
     ```
 
-- **For R2:**<br>
-    ```
-    R2# copy running-config tftp<br>
-    Enter TFTP server address: 10.0.0.200<br>
+10. **როგორ დააყენებთ მომხმარებელ `disabled_user`-ის Shell-ს `/sbin/nologin`-ზე, რათა მან ვერ შეძლოს სისტემაში შესვლა?**
+
+    ```bash
+    sudo usermod -s /sbin/nologin disabled_user
     ```
 
-### **Final Step: Save Configuration**<br>
-- **For both routers:**<br>
+11. **რომელი ბრძანებით შექმნით ახალ ჯგუფს სახელად `web_devs`?**
+
+    ```bash
+    sudo groupadd web_devs
     ```
-    R1# write memory<br>
-    R2# write memory<br>
-    ``<br>` 
 
-This provides the full configuration based on your setup.
-            </p> 
-        </div></div>   
-   
-<!-- Footer -->
+12. **როგორ შექმნით ახალ მომხმარებელ `api_user`-ს `/bin/false` Shell-ით (რათა მას არ ჰქონდეს ინტერაქტიული შესვლის შესაძლებლობა) და `api_group` ჯგუფის ძირითად ჯგუფად?**
 
-<!-- <footer class="footer">
-  <div class="foot" >
-<div class="contactinfo">
-  <a class="address" href="">5th flora, 700/D kings road, green lane New York-1782 </a>
-    <br>
-    <a class="tel" href="">+10 367 826 2567</a>
-     <br>
-      <a class="mail" href="">contact@carpenter.com</a>
-    </div>
-    <div class="copyrightdiv">
-      <span class="copyright">Copyright ©2022 All rights reserved |</span> <span class="copyright">This template is made by Me</span> 
-    </div>
-  </div>
-</footer>
+    ```bash
+    sudo useradd -g api_group -s /bin/false api_user
+    ```
+
+13. **რომელი ბრძანებით შეცვლით ფაილის `/etc/passwd` მფლობელობას `root` მომხმარებელზე და `root` ჯგუფზე?**
+
+    ```bash
+    sudo chown root:root /etc/passwd
+    ```
+
+14. **თქვენ გაქვთ დირექტორია `/home/public_share`. როგორ მიანიჭებთ მას Sticky Bit-ს და დააყენებთ უფლებებს `rwxrwxrwt`-ზე, რათა ყველამ შეძლოს ფაილების შექმნა, მაგრამ მხოლოდ მფლობელმა ან root-მა შეძლოს წაშლა?**
+
+    ```bash
+    sudo chmod 1777 /home/public_share
+    ```
+    რა თქმა უნდა, წარმოგიდგენთ Linux-ის ბრძანებებს მომხმარებლების, ჯგუფების, ფაილის უფლებებისა და ატრიბუტების სამართავად:
+
+-----
+
+### მომხმარებლის და ჯგუფის მართვა (გაგრძელება)
+
+15. **როგორ წაშლით ჯგუფს `old_team`?**
+
+<!-- end list -->
+
+````
+```bash
+sudo groupdel old_team
+```
+````
+
+16. **რომელი ბრძანებით დაამატებთ მომხმარებელ `backend`-ს `developers` და `testers` ჯგუფებში, მაგრამ წაშლით მას `qa` ჯგუფიდან?**
+
+<!-- end list -->
+
+````
+```bash
+sudo usermod -aG developers,testers backend
+sudo gpasswd -d backend qa
+```
+````
+
+17. **თქვენ გჭირდებათ, რომ `/usr/local/bin/script.sh` ფაილს ჰქონდეს შესრულების უფლება მხოლოდ მფლობელისთვის, და წაკითხვის უფლება ყველასთვის. დაწერეთ ერთი ბრძანება.**
+
+<!-- end list -->
+
+````
+```bash
+sudo chmod 544 /usr/local/bin/script.sh
+```
+````
+
+18. **როგორ მიანიჭებთ მომხმარებელ `temp_admin`-ს `sudo` ჯგუფში, რათა მას შეეძლოს `sudo` ბრძანების გამოყენება?**
+
+<!-- end list -->
+
+````
+```bash
+sudo usermod -aG sudo temp_admin
+```
+````
+
+19. **რომელი ბრძანებით ნახავთ მომხმარებელ `syslog`-ის UID-ს და GID-ს?**
+
+<!-- end list -->
+
+````
+```bash
+id syslog
+```
+````
+
+20. **როგორ დაბლოკავთ მომხმარებელ `support`-ის ანგარიშს (ექსპაირება)?**
+
+<!-- end list -->
+
+````
+```bash
+sudo usermod -L support # ეს ბრძანება ბლოკავს პაროლს
+# ან შეგიძლიათ დააყენოთ ვადაგასვლის თარიღი:
+# sudo usermod --expiredate 1 support
+```
+````
+
+21. **რომელი ბრძანებით შექმნით ახალ მომხმარებელ `monitoring` სისტემური მომხმარებლის სახით, საშინაო დირექტორიისა და Shell-ის გარეშე?**
+
+<!-- end list -->
+
+````
+```bash
+sudo useradd -r -M -N -s /sbin/nologin monitoring
+```
+````
+
+22. **როგორ შეამოწმებთ ყველა სისტემური მომხმარებლის ჩამონათვალს?**
+
+<!-- end list -->
+
+````
+```bash
+getent passwd | awk -F: '$3 < 1000 {print $1}'
+```
+*(შენიშვნა: UID-ის ზღვარი სისტემური მომხმარებლებისთვის შეიძლება განსხვავდებოდეს დისტრიბუციის მიხედვით, ხშირად 1000-ზე ნაკლებია.)*
+````
+
+23. **რომელი ბრძანებით შეცვლით ფაილის `/var/www/html/index.php` ჯგუფურ მფლობელობას `apache`-ზე?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chgrp apache /var/www/html/index.php
+```
+````
+
+24. **თქვენ გჭირდებათ, რომ დირექტორია `/opt/scripts` იყოს მფლობელისთვის ყველა უფლებით (`rwx`), ჯგუფისთვის წაკითხვისა და შესრულების უფლებით (`rx`), და სხვა მომხმარებლებისთვის არანაირი უფლებით. ამავე დროს, დირექტორიაში შექმნილმა ახალმა ფაილებმა და დირექტორიებმა ავტომატურად უნდა მემკვიდრეობით მიიღონ მშობლის ჯგუფი (SetGID).**
+
+<!-- end list -->
+
+````
+```bash
+sudo chmod 2770 /opt/scripts
+```
+````
+
+25. **როგორ წაშლით მომხმარებელ `old_dev`-ს, მათ შორის მის საშინაო დირექტორიას, მაგრამ არ შეეხებით მის მიერ შექმნილ ჯგუფებს?**
+
+<!-- end list -->
+
+````
+```bash
+sudo userdel -r old_dev
+```
+````
+
+26. **რომელი ბრძანებით წაშლით მომხმარებელ `auditor`-ს `security` ჯგუფიდან, ისე რომ ის კვლავ დარჩეს სხვა ჯგუფებში, თუკი გაწევრიანებულია?**
+
+<!-- end list -->
+
+````
+```bash
+sudo gpasswd -d auditor security
+```
+````
+
+27. **თქვენ გჭირდებათ, რომ `/usr/local/share/app.log` ფაილს ჰქონდეს მხოლოდ მფლობელისთვის ჩაწერის უფლება, ხოლო ყველასთვის წაკითხვის უფლება. შესრულების უფლება არავის არ უნდა ჰქონდეს. დაწერეთ ერთი ბრძანება.**
+
+<!-- end list -->
+
+````
+```bash
+sudo chmod 644 /usr/local/share/app.log
+```
+````
+
+28. **როგორ შეცვლით მომხმარებელ `guest`-ის საშინაო დირექტორიას `/home/guests/guest_profile`-ზე?**
+
+<!-- end list -->
+
+````
+```bash
+sudo usermod -d /home/guests/guest_profile guest
+```
+````
+
+29. **რომელი ბრძანებით შექმნით ახალ ჯგუფს `hr_team` GID-ის მითითების გარეშე?**
+
+<!-- end list -->
+
+````
+```bash
+sudo groupadd hr_team
+```
+````
+
+30. **როგორ დააყენებთ მომხმარებელ `service_user`-ის ანგარიშს ვადაგასულად (expiry date) დღევანდელ დღეს?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chage -E $(date +%Y-%m-%d) service_user
+```
+````
+
+-----რა თქმა უნდა, წარმოგიდგენთ Linux-ის ბრძანებებს მომხმარებლების, ჯგუფების, ფაილის უფლებებისა და ატრიბუტების სამართავად:
+
+-----
+
+### მომხმარებლის და ჯგუფის მართვა (გაგრძელება)
+
+31. **რომელი ბრძანებით შექმნით ახალ მომხმარებელს სახელად `dev_user` საშინაო დირექტორიის შექმნის გარეშე?**
+
+<!-- end list -->
+
+````
+```bash
+sudo useradd -M dev_user
+```
+````
+
+32. **როგორ დაამატებთ მომხმარებელ `testuser`-ს უკვე არსებულ `developers` ჯგუფში, ისე რომ მისი ძირითადი ჯგუფი არ შეიცვალოს?**
+
+<!-- end list -->
+
+````
+```bash
+sudo usermod -aG developers testuser
+```
+````
+
+33. **რომელი ბრძანებით შეამოწმებთ მომხმარებელ `admin`-ის ყველა იმ ჯგუფს, რომელშიც ის გაწევრიანებულია?**
+
+<!-- end list -->
+
+````
+```bash
+id admin
+```
+````
+
+34. **თქვენ გაქვთ ფაილი `/opt/data/report.txt`. როგორ მიანიჭებთ მფლობელობის უფლებას მომხმარებელ `john`-ს და ჯგუფ `data_team`-ს ამ ფაილზე?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chown john:data_team /opt/data/report.txt
+```
+````
+
+35. **რომელი ბრძანებით დააყენებთ `/var/www/html` დირექტორიაზე SetGID (SGID) ბიტს, რათა ამ დირექტორიაში შექმნილი ნებისმიერი ახალი ფაილი ან დირექტორია ავტომატურად მემკვიდრეობით იღებდეს მშობელი დირექტორიის ჯგუფურ მფლობელობას?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chmod g+s /var/www/html
+```
+ან (რიცხვითი ფორმატით)
+```bash
+sudo chmod 2775 /var/www/html
+```
+````
+
+36. **როგორ წაშლით მომხმარებელ `old_account`-ს სისტემიდან, მისი საშინაო დირექტორიისა და მეილის სპულის შენარჩუნებით?**
+
+<!-- end list -->
+
+````
+```bash
+sudo userdel old_account
+```
+````
+
+37. **თქვენ გჭირდებათ, რომ ფაილი `/etc/config/app.conf` იყოს მხოლოდ წაკითხვადი ყველა მომხმარებლისთვის, გარდა მფლობელისა, რომელსაც უნდა ჰქონდეს წაკითხვისა და ჩაწერის უფლება. მფლობელი ჯგუფისთვის და სხვა მომხმარებლებისთვის ჩაწერის და შესრულების უფლება უნდა იყოს აკრძალული. დაწერეთ ერთი ბრძანება.**
+
+<!-- end list -->
+
+````
+```bash
+sudo chmod 644 /etc/config/app.conf
+```
+````
+
+38. **როგორ შექმნით ჯგუფს `sysadmins` GID 5000-ით?**
+
+<!-- end list -->
+
+````
+```bash
+sudo groupadd -g 5000 sysadmins
+```
+````
+
+39. **თქვენ გაქვთ სკრიპტი `/usr/local/bin/backup.sh`. როგორ მიანიჭებთ მას SetUID (SUID) ბიტს, რათა ის ყოველთვის `root` მომხმარებლის პრივილეგიებით გაეშვას, მიუხედავად იმისა, თუ რომელი მომხმარებელი გაუშვებს მას?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chmod u+s /usr/local/bin/backup.sh
+```
+*(**გაფრთხილება:** SUID ბიტის გამოყენება სერიოზულ უსაფრთხოების რისკებს შეიცავს, თუ სკრიპტი სათანადოდ არ არის დაწერილი და შემოწმებული.)*
+````
+
+40. **როგორ დაბლოკავთ მომხმარებელ `guest`-ის პაროლს, ისე რომ მას დროებით აღარ შეეძლოს სისტემაში შესვლა პაროლის გარეშე?**
+
+<!-- end list -->
+
+````
+```bash
+sudo passwd -l guest
+```
+````
+
+41. **რომელი ბრძანებით შექმნით ახალ მომხმარებელ `developer`-ს, რომლის ძირითადი ჯგუფი იქნება `dev_group` (თუ ეს ჯგუფი არ არსებობს, ის ავტომატურად უნდა შეიქმნას)?**
+
+<!-- end list -->
+
+````
+```bash
+sudo useradd -m -g dev_group developer
+```
+*(თუ `dev_group` არ არსებობს, `useradd` ავტომატურად შექმნის მას ამ ბრძანების გამოყენებისას. `-m` ოფცია ქმნის საშინაო დირექტორიასაც.)*
+````
+
+-----
+    რა თქმა უნდა, წარმოგიდგენთ Linux-ის ბრძანებებს მომხმარებლების, ჯგუფების, ფაილის უფლებებისა და ატრიბუტების სამართავად:
+
+-----
+
+### მომხმარებლის და ჯგუფის მართვა (გაგრძელება)
+
+42. **როგორ წაშლით მომხმარებელ `legacyuser`-ს სისტემიდან, მისი საშინაო დირექტორიის ჩათვლით?**
+
+<!-- end list -->
+
+````
+```bash
+sudo userdel -r legacyuser
+```
+````
+
+43. **რომელი ბრძანებით შეცვლით მომხმარებელ `john`-ის ძირითად ჯგუფს `ops_team`-ზე?**
+
+<!-- end list -->
+
+````
+```bash
+sudo usermod -g ops_team john
+```
+````
+
+44. **თქვენ გაქვთ დირექტორია `/var/log/nginx`. როგორ შეცვლით მის მფლობელ ჯგუფს `www-data`-ზე, რეკურსიულად ამ დირექტორიის შიგნით არსებული ყველა ფაილისა და ქვე-დირექტორიის ჩათვლით?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chgrp -R www-data /var/log/nginx
+```
+````
+
+45. **როგორ მიანიჭებთ `/home/shared_docs` დირექტორიას Sticky Bit-ს, რათა მხოლოდ ფაილის მფლობელს ან root-ს შეეძლოს ფაილების წაშლა/გადარქმევა ამ დირექტორიაში, მაშინაც კი, თუ სხვა მომხმარებლებს აქვთ ჩაწერის უფლება?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chmod +t /home/shared_docs
+```
+ან (რიცხვითი ფორმატით)
+```bash
+sudo chmod 1777 /home/shared_docs # თუ გსურთ სხვებს ჰქონდეთ წერის უფლება
+```
+````
+
+46. **რომელი ბრძანებით დაამატებთ არსებულ მომხმარებელ `reporter`-ს `marketing` ჯგუფში, ისე რომ მისი ყველა არსებული დამატებითი ჯგუფი შენარჩუნდეს?**
+
+<!-- end list -->
+
+````
+```bash
+sudo usermod -aG marketing reporter
+```
+````
+
+47. **თქვენ გჭირდებათ, რომ `/srv/backup` დირექტორიაზე მფლობელს ჰქონდეს ყველა უფლება (`rwx`), ჯგუფს ჰქონდეს მხოლოდ წაკითხვისა და შესრულების უფლება (`rx`), ხოლო სხვა მომხმარებლებს არ ჰქონდეთ არანაირი უფლება. დაწერეთ ერთი ბრძანება.**
+
+<!-- end list -->
+
+````
+```bash
+sudo chmod 750 /srv/backup
+```
+````
+
+48. **როგორ შეამოწმებთ კონკრეტული მომხმარებლის (მაგალითად, `mary`) მომხმარებლის ID-ს (UID) და ძირითადი ჯგუფის ID-ს (GID)?**
+
+<!-- end list -->
+
+````
+```bash
+id mary
+```
+````
+
+49. **რომელი ბრძანებით განაახლებთ მომხმარებელ `guest`-ის პაროლს?**
+
+<!-- end list -->
+
+````
+```bash
+sudo passwd guest
+```
+````
+
+50. **როგორ წაშლით ჯგუფს `old_group`?**
+
+<!-- end list -->
+
+````
+```bash
+sudo groupdel old_group
+```
+````
+
+51. **რომელი ბრძანებით შექმნით ახალ მომხმარებელ `webmaster`-ს საშinaო დირექტორიის `/var/www/webmaster`-ით და `apache` ჯგუფის ძირითად ჯგუფად?**
+
+<!-- end list -->
+
+````
+```bash
+sudo useradd -m -d /var/www/webmaster -g apache webmaster
+```
+````
+
+52. **როგორ ჩამოთვლით ყველა არსებულ მომხმარებელს სისტემაში UID-ის მიხედვით დალაგებული სახით?**
+
+<!-- end list -->
+
+````
+```bash
+getent passwd | sort -t: -k3n
+```
+````
+
+53. **რომელი ბრძანებით შეცვლით დირექტორიის `/tmp/uploads` მფლობელობას მომხმარებელ `uploader`-ზე და ჯგუფ `ftp_users`-ზე?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chown uploader:ftp_users /tmp/uploads
+```
+````
+
+54. **თქვენ გაქვთ სკრიპტი `/usr/local/bin/check_disk.sh`. როგორ მიანიჭებთ მას SetUID (SUID) ბიტს, რათა ის ყოველთვის root მომხმარებლის პრივილეგიებით გაეშვას, და ასევე დააყენებთ მასზე შესრულების უფლებებს მხოლოდ მფლობელისთვის (`rwx`), ხოლო ჯგუფისთვის და სხვებისთვის - არანაირ უფლებას?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chmod 4700 /usr/local/bin/check_disk.sh
+```
+*(**გაფრთხილება:** SUID ბიტის გამოყენება სერიოზულ უსაფრთხოების რისკებს შეიცავს, თუ სკრიპტი სათანადოდ არ არის დაწერილი და შემოწმებული.)*
+````
+
+55. **როგორ შეცვლით მომხმარებელ `backup_user`-ის Shell-ს `/bin/bash`-ზე?**
+
+<!-- end list -->
+
+````
+```bash
+sudo usermod -s /bin/bash backup_user
+```
+````
+
+-----
+
+გაქვთ თუ არა დამატებითი შეკითხვები Linux-ის ადმინისტრირების შესახებ?
+
+    რა თქმა უნდა, წარმოგიდგენთ Linux-ის ბრძანებებს მომხმარებლების, ჯგუფების, ფაილის უფლებებისა და ატრიბუტების სამართავად:
+
+-----
+
+### მომხმარებლის და ჯგუფის მართვა (გაგრძელება)
+
+56. **რომელი ბრძანებით დაამატებთ მომხმარებელ `analyst`-ს `marketing` და `finance` ჯგუფებში, მაგრამ წაშლით მას `sales` ჯგუფიდან?**
+
+<!-- end list -->
+
+````
+```bash
+sudo usermod -aG marketing,finance analyst
+sudo gpasswd -d analyst sales
+```
+````
+
+57. **თქვენ გჭირდებათ, რომ `/etc/nginx/nginx.conf` ფაილს ჰქონდეს წაკითხვის უფლება მხოლოდ `root` მომხმარებლისთვის და `nginx` ჯგუფისთვის, ხოლო ჩაწერის უფლება მხოლოდ `root` მომხმარებლისთვის. სხვა მომხმარებლებს არ უნდა ჰქონდეთ არანაირი უფლება. დაწერეთ ერთი ბრძანება.**
+
+<!-- end list -->
+
+````
+```bash
+sudo chmod 640 /etc/nginx/nginx.conf
+sudo chown root:nginx /etc/nginx/nginx.conf # დარწმუნდით, რომ მფლობელი და ჯგუფი სწორია
+```
+````
+
+58. **როგორ შეამოწმებთ, რომელ ჯგუფებშია გაწევრიანებული მომხმარებელი `www-data`?**
+
+<!-- end list -->
+
+````
+```bash
+id www-data
+```
+````
+
+59. **რომელი ბრძანებით შექმნით ახალ ჯგუფს `developers` GID 2000-ით?**
+
+<!-- end list -->
+
+````
+```bash
+sudo groupadd -g 2000 developers
+```
+````
+
+60. **როგორ განბლოკავთ მომხმარებელ `blocked_user`-ის პაროლს?**
+
+<!-- end list -->
+
+````
+```bash
+sudo passwd -u blocked_user
+```
+````
+
+61. **რომელი ბრძანებით შექმნით ახალ მომხმარებელ `marketing_user`-ს, რომლის ვადაგასვლის თარიღი იქნება 2026 წლის 1 იანვარი?**
+
+<!-- end list -->
+
+````
+```bash
+sudo useradd -m -e 2026-01-01 marketing_user
+```
+````
+
+62. **როგორ დაამატებთ მომხმარებელ `analyst_user`-ს `finance` ჯგუფში, ისე რომ ეს ჯგუფი მისი ძირითადი ჯგუფი გახდეს?**
+
+<!-- end list -->
+
+````
+```bash
+sudo usermod -g finance analyst_user
+```
+````
+
+63. **რომელი ბრძანებით შეამოწმებთ მომხმარებელ `root`-ის პაროლის ბოლო ცვლილების თარიღს და პაროლის მოქმედების ვადას?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chage -l root
+```
+````
+
+64. **თქვენ გაქვთ ფაილი `/var/log/messages`. როგორ შეცვლით მის მფლობელ ჯგუფს `syslog`-ზე და მიანიჭებთ უფლებებს `r--r-----`?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chgrp syslog /var/log/messages
+sudo chmod 440 /var/log/messages
+```
+````
+
+65. **როგორ დააყენებთ `/home/shared_data` დირექტორიაზე Sticky Bit-ს, რათა მომხმარებლებმა შეძლონ ფაილების შექმნა, მაგრამ მხოლოდ მფლობელმა ან `root`-მა შეძლოს მათი წაშლა?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chmod +t /home/shared_data
+```
+ან (რიცხვითი ფორმატით, თუ გსურთ უფლებების კონტროლიც):
+```bash
+sudo chmod 1777 /home/shared_data
+```
+````
+
+66. **რომელი ბრძანებით წაშლით მომხმარებელ `temp_guest`-ს სისტემიდან, მისი საშინაო დირექტორიისა და მეილის სპულის ჩათვლით?**
+
+<!-- end list -->
+
+````
+```bash
+sudo userdel -r temp_guest
+```
+````
+
+67. **თქვენ გჭირდებათ, რომ სკრიპტი `/usr/local/bin/cleanup.sh` ავტომატურად გაეშვას `root` პრივილეგიებით, მიუხედავად იმისა, თუ ვინ გაუშვებს მას. გარდა ამისა, ამ სკრიპტს უნდა ჰქონდეს შესრულების უფლება მხოლოდ მფლობელისთვის, ხოლო დანარჩენებისთვის მხოლოდ წაკითხვის უფლება. დაწერეთ ერთი ბრძანება.**
+
+<!-- end list -->
+
+````
+```bash
+sudo chmod 4744 /usr/local/bin/cleanup.sh
+```
+*(**გაფრთხილება:** SUID ბიტის გამოყენება სერიოზულ უსაფრთხოების რისკებს შეიცავს, თუ სკრიპტი სათანადოდ არ არის დაწერილი და შემოწმებული.)*
+````
+
+68. **როგორ შექმნით ჯგუფს `power_users` GID 6000-ით?**
+
+<!-- end list -->
+
+````
+```bash
+sudo groupadd -g 6000 power_users
+```
+````
+
+69. **რომელი ბრძანებით შეცვლით მომხმარებელ `developer`-ის Shell-ს `/bin/zsh`-ზე?**
+
+<!-- end list -->
+
+````
+```bash
+sudo usermod -s /bin/zsh developer
+```
+````
+
+70. **როგორ დაბლოკავთ მომხმარებელ `old_staff`-ის ანგარიშს პაროლის გამოყენებით (არ პაროლის ვადაგასვლით)?**
+
+<!-- end list -->
+
+````
+```bash
+sudo passwd -l old_staff
+```
+````
+    რა თქმა უნდა, წარმოგიდგენთ Linux-ის ბრძანებებს მომხმარებლების, ჯგუფების, ფაილის უფლებებისა და ატრიბუტების სამართავად:
+
+-----
+
+### მომხმარებლის და ჯგუფის მართვა (გაგრძელება)
+
+71. **რომელი ბრძანებით შექმნით ახალ მომხმარებელ `db_admin`-ს, რომლის საშინაო დირექტორია იქნება `/srv/databases/db_admin` და არ შეიქმნება სისტემური ჯგუფი?**
+
+<!-- end list -->
+
+````
+```bash
+sudo useradd -m -d /srv/databases/db_admin -N db_admin
+```
+````
+
+72. **როგორ წაშლით მომხმარებელ `former_employee`-ს სისტემიდან, მისი საშინაო დირექტორიის შენარჩუნებით?**
+
+<!-- end list -->
+
+````
+```bash
+sudo userdel former_employee
+```
+````
+
+73. **რომელი ბრძანებით შეამოწმებთ მომხმარებელ `apache`-ის UID-ს, GID-ს და ყველა დამატებით ჯგუფს?**
+
+<!-- end list -->
+
+````
+```bash
+id apache
+```
+````
+
+74. **თქვენ გაქვთ დირექტორია `/var/www/vhosts/example.com`. როგორ შეცვლით მის მფლობელს `web_user`-ზე და ჯგუფს `web_group`-ზე, რეკურსიულად, ამ დირექტორიაში არსებული ყველა ფაილისა და ქვე-დირექტორიის ჩათვლით?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chown -R web_user:web_group /var/www/vhosts/example.com
+```
+````
+
+75. **როგორ დააყენებთ `/opt/shared_configs` დირექტორიაზე SetGID (SGID) ბიტს და ასევე მიანიჭებთ მას უფლებებს `rwxr-sr-x`?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chmod 2755 /opt/shared_configs
+```
+````
+
+76. **რომელი ბრძანებით დაამატებთ მომხმარებელ `qa_tester`-ს `testers` და `devs` ჯგუფებში, მაგრამ წაშლით მას `reviewers` ჯგუფიდან?**
+
+<!-- end list -->
+
+````
+```bash
+sudo usermod -aG testers,devs qa_tester
+sudo gpasswd -d qa_tester reviewers
+```
+````
+
+77. **თქვენ გჭირდებათ, რომ `/etc/nginx/sites-enabled/default.conf` ფაილს ჰქონდეს `rw-r--r--` უფლებები. დაწერეთ ერთი ბრძანება.**
+
+<!-- end list -->
+
+````
+```bash
+sudo chmod 644 /etc/nginx/sites-enabled/default.conf
+```
+````
+
+78. **როგორ შექმნით ჯგუფს `auditors` GID-ის ავტომატური მინიჭებით?**
+
+<!-- end list -->
+
+````
+```bash
+sudo groupadd auditors
+```
+````
+
+79. **რომელი ბრძანებით აიძულებთ მომხმარებელ `new_user`-ს, რომ სისტემაში პირველი შესვლისას პაროლი შეცვალოს?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chage -d 0 new_user
+```
+````
+
+80. **როგორ შეამოწმებთ, რომელ ჯგუფებშია გაწევრიანებული მიმდინარე მომხმარებელი, ჯგუფის სახელების ნაცვლად ჯგუფის ID-ების ჩვენებით?**
+
+<!-- end list -->
+
+````
+```bash
+id -G
+```
+````
+
+81. **რომელი ბრძანებით შექმნით ახალ მომხმარებელ `guest_user`-ს, რომლის ვადაგასვლის თარიღი იქნება 2025 წლის 31 დეკემბერი და მას არ ექნება ინტერაქტიული შესვლის შესაძლებლობა (Shell იქნება `/bin/false`)?**
+
+<!-- end list -->
+
+````
+```bash
+sudo useradd -m -e 2025-12-31 -s /bin/false guest_user
+```
+````
+
+82. **როგორ დაამატებთ მომხმარებელ `sys_admin`-ს `sudo` ჯგუფში, ისე რომ მისი ყველა სხვა დამატებითი ჯგუფი შენარჩუნდეს?**
+
+<!-- end list -->
+
+````
+```bash
+sudo usermod -aG sudo sys_admin
+```
+````
+
+83. **რომელი ბრძანებით ჩამოთვლით ყველა არსებულ მომხმარებელს, მათი საშინაო დირექტორიების ჩვენებით?**
+
+<!-- end list -->
+
+````
+```bash
+getent passwd | awk -F: '{print $1 " " $6}'
+```
+````
+
+84. **თქვენ გაქვთ ფაილი `/var/log/httpd/access.log`. როგორ მიანიჭებთ მას მფლობელობის უფლებას მომხმარებელ `apache`-ს და ჯგუფ `logs`-ს?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chown apache:logs /var/log/httpd/access.log
+```
+````
+
+85. **როგორ დააყენებთ `/var/www/static_content` დირექტორიაზე უფლებებს `rwxr-x--x` და Sticky Bit-ს?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chmod 1751 /var/www/static_content
+```
+````
+
+-----
+რა თქმა უნდა, წარმოგიდგენთ Linux-ის ბრძანებებს მომხმარებლების, ჯგუფების, ფაილის უფლებებისა და ატრიბუტების სამართავად:
+
+-----
+
+### მომხმარებლის და ჯგუფის მართვა (გაგრძელება)
+
+86. **რომელი ბრძანებით წაშლით მომხმარებელ `test_user`-ს, მისი საშინაო დირექტორიის ჩათვლით, და ასევე წაშლით მის მიერ შექმნილ ჯგუფს (თუკი ის ერთადერთი წევრია)?**
+
+<!-- end list -->
+
+````
+```bash
+sudo userdel -r test_user
+```
+````
+
+87. **თქვენ გჭირდებათ, რომ `/usr/local/bin/monitor.sh` სკრიპტს ჰქონდეს SetGID (SGID) ბიტი და უფლებები `rwxr-s---`, რათა ის გაეშვას ჯგუფის პრივილეგიებით და მხოლოდ ამ ჯგუფის წევრებს შეეძლოთ მისი შესრულება. დაწერეთ ერთი ბრძანება.**
+
+<!-- end list -->
+
+````
+```bash
+sudo chmod 2750 /usr/local/bin/monitor.sh
+```
+````
+
+88. **როგორ შეამოწმებთ კონკრეტული ჯგუფის (`devs`) GID-ს?**
+
+<!-- end list -->
+
+````
+```bash
+getent group devs | awk -F: '{print $3}'
+```
+````
+
+89. **რომელი ბრძანებით შეცვლით მომხმარებელ `deployer`-ის საშინაო დირექტორიას `/home/deployments`-ზე და ამავე დროს გადაიტანთ არსებულ შიგთავსს ახალ ლოკაციაზე?**
+
+<!-- end list -->
+
+````
+```bash
+sudo usermod -m -d /home/deployments deployer
+```
+````
+
+90. **როგორ გახსნით მომხმარებელ `locked_out`-ის ანგარიშს (რომელიც დაბლოკილია `usermod -L`-ით)?**
+
+<!-- end list -->
+
+````
+```bash
+sudo passwd -u locked_out
+```
+````
+
+91. **რომელი ბრძანებით შექმნით ახალ ჯგუფს `project_devs` GID 3000-ით და ამავე დროს დაამატებთ მასში მომხმარებლებს `user1` და `user2`?**
+
+<!-- end list -->
+
+````
+```bash
+sudo groupadd -g 3000 project_devs
+sudo usermod -aG project_devs user1
+sudo usermod -aG project_devs user2
+```
+*შენიშვნა: `groupadd` ბრძანებას არ აქვს პირდაპირი ოფცია მომხმარებლების დასამატებლად შექმნისას. ამიტომ, საჭიროა ორი ცალკეული `usermod` ბრძანება.*
+````
+
+92. **როგორ წაშლით მომხმარებელ `terminated_user`-ს სისტემიდან, მისი საშინაო დირექტორიის შენარჩუნებით, მაგრამ დარწმუნდებით, რომ ყველა პროცესი, რომელიც ამ მომხმარებლის მიერ არის გაშვებული, შეჩერდება?**
+
+<!-- end list -->
+
+````
+```bash
+sudo pkill -u terminated_user # კლავს ყველა პროცესს ამ მომხმარებლისთვის
+sudo userdel terminated_user  # წაშლის მომხმარებლის ანგარიშს
+```
+````
+
+93. **რომელი ბრძანებით ჩამოთვლით ყველა მომხმარებელს მათი UID-ით, დალაგებული აღმავალი თანმიმდევრობით?**
+
+<!-- end list -->
+
+````
+```bash
+getent passwd | sort -t: -k3n | awk -F: '{print $1 " (UID: " $3 ") (Home: " $6 ")"}'
+```
+````
+
+94. **თქვენ გაქვთ დირექტორია `/srv/data/imports`. როგორ დააყენებთ მასზე უფლებებს `rwxrwx---` და SetGID (SGID) ბიტს, რათა ამ დირექტორიაში შექმნილმა ახალმა ფაილებმა მემკვიდრეობით მიიღონ მშობელი დირექტორიის ჯგუფი?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chmod 2770 /srv/data/imports
+```
+````
+
+95. **როგორ შექმნით ახალ მომხმარებელ `batch_job_user`-ს, რომელსაც არ ექნება ინტერაქტიული შესვლის Shell და არ ექნება საშინაო დირექტორია?**
+
+<!-- end list -->
+
+````
+```bash
+sudo useradd -M -s /sbin/nologin batch_job_user
+```
+````
+
+96. **რომელი ბრძანებით ამოიღებთ მომხმარებელ `web_admin`-ს `www-data` ჯგუფიდან, ისე რომ ის კვლავ დარჩეს ყველა სხვა ჯგუფში?**
+
+<!-- end list -->
+
+````
+```bash
+sudo gpasswd -d web_admin www-data
+```
+````
+
+97. **თქვენ გჭირდებათ, რომ `/etc/sudoers.d/custom_rules` ფაილს ჰქონდეს `r--r-----` უფლებები, რათა მისი შიგთავსი იყოს დაცული შემთხვევითი ცვლილებებისგან. დაწერეთ ერთი ბრძანება.**
+
+<!-- end list -->
+
+````
+```bash
+sudo chmod 440 /etc/sudoers.d/custom_rules
+```
+````
+
+98. **როგორ შეცვლით მომხმარებელ `backup_operator`-ის პაროლის მინიმალურ სიცოცხლის ხანგრძლივობას 7 დღეზე?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chage -m 7 backup_operator
+```
+````
+
+-----
+
+რა თქმა უნდა, წარმოგიდგენთ Linux-ის ბრძანებებს მომხმარებლების, ჯგუფების, ფაილის უფლებებისა და ატრიბუტების სამართავად:
+
+-----
+
+### მომხმარებლის და ჯგუფის მართვა (გაგრძელება)
+
+99. **რომელი ბრძანებით დაამატებთ მომხმარებელ `ftp_guest`-ს `ftpusers` ჯგუფში, ისე რომ ეს იყოს მისი ერთადერთი დამატებითი ჯგუფი?**
+
+<!-- end list -->
+
+````
+```bash
+sudo usermod -G ftpusers ftp_guest
+```
+````
+
+100. **როგორ შეამოწმებთ `/etc/passwd` ფაილის უფლებებს (permission bits) სიმბოლური ფორმატით?**
+
+<!-- end list -->
+
+````
+```bash
+ls -l /etc/passwd
+```
+````
+
+101. **რომელი ბრძანებით შექმნით ახალ მომხმარებელ `service_account`-ს, რომლის UID იქნება 1005 და ის არ შევა სისტემაში (Shell `/sbin/nologin`)?**
+
+<!-- end list -->
+
+````
+```bash
+sudo useradd -u 1005 -s /sbin/nologin service_account
+```
+````
+
+102. **როგორ შეამოწმებთ მომხმარებელ `root`-ის პაროლის ამოწურვის თარიღს (expiry date)?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chage -l root
+```
+````
+
+103. **რომელი ბრძანებით შეცვლით ფაილის `/etc/resolv.conf` მფლობელობას მომხმარებელ `network_user`-ზე და ჯგუფ `network_team`-ზე?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chown network_user:network_team /etc/resolv.conf
+```
+````
+
+104. **თქვენ გჭირდებათ, რომ დირექტორია `/srv/uploads` იყოს მფლობელისთვის ყველა უფლებით (`rwx`), ჯგუფისთვის ჩაწერის და შესრულების უფლებით (`wx`), ხოლო სხვებისთვის არანაირი უფლებით. ამავე დროს, ამ დირექტორიაში შექმნილი ახალი ფაილები უნდა მემკვიდრეობით იღებდნენ მშობელი დირექტორიის ჯგუფს (SetGID).**
+
+<!-- end list -->
+
+````
+```bash
+sudo chmod 2730 /srv/uploads
+```
+````
+
+105. **როგორ წაშლით ჯგუფს `deprecated_group`, მაშინაც კი, თუ მასში მომხმარებლები არიან გაწევრიანებულნი?**
+
+<!-- end list -->
+
+````
+```bash
+sudo groupdel deprecated_group
+```
+*შენიშვნა: `groupdel` ავტომატურად არ წაშლის მომხმარებლებს ჯგუფიდან. თუ ჯგუფში არიან მომხმარებლები, ბრძანება წარმატებით შესრულდება, მაგრამ მომხმარებლებს შესაძლოა პრობლემები შეექმნათ, თუ ეს მათი ძირითადი ჯგუფი იყო.*
+````
+
+106. **რომელი ბრძანებით დაამატებთ მომხმარებელ `admin_user`-ს `sudo` და `wheel` ჯგუფებში, მაგრამ დარწმუნდებით, რომ ეს იქნება მისი ერთადერთი დამატებითი ჯგუფები?**
+
+<!-- end list -->
+
+````
+```bash
+sudo usermod -G sudo,wheel admin_user
+```
+````
+
+107. **თქვენ გაქვთ სკრიპტი `/opt/monitor/alert.sh`. როგორ მიანიჭებთ მას SetUID (SUID) ბიტს, რათა ის გაეშვას `root` პრივილეგიებით, და ასევე დააყენებთ მასზე უფლებებს `rwxr-x---`?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chmod 4750 /opt/monitor/alert.sh
+```
+*(**გაფრთხილება:** SUID ბიტის გამოყენება სერიოზულ უსაფრთხოების რისკებს შეიცავს, თუ სკრიპტი სათანადოდ არ არის დაწერილი და შემოწმებული.)*
+````
+
+108. **როგორ შეამოწმებთ ყველა მომხმარებლის ჩამონათვალს, რომელთაც აქვთ Shell `/bin/bash`?**
+
+<!-- end list -->
+
+````
+```bash
+getent passwd | grep '/bin/bash$' | awk -F: '{print $1}'
+```
+````
+
+109. **რომელი ბრძანებით დაბლოკავთ მომხმარებელ `guest_login`-ის ანგარიშს, რათა მან ვერ შეძლოს სისტემაში შესვლა?**
+
+<!-- end list -->
+
+````
+```bash
+sudo usermod -L guest_login
+```
+ან (თუ გსურთ ანგარიშის ვადაგასვლის თარიღის დაყენება)
+```bash
+sudo usermod --expiredate 1970-01-01 guest_login
+```
+````
+
+110. **როგორ შექმნით ჯგუფს `support_team` GID-ის ავტომატური მინიჭებით და დამატებითი კომენტარით "IT Support Department"?**
+
+<!-- end list -->
+
+````
+```bash
+sudo groupadd -c "IT Support Department" support_team
+```
+````
+
+111. **რომელი ბრძანებით შექმნით ახალ მომხმარებელ `ftp_upload`-ს, საშინაო დირექტორიის `/srv/ftp_root/uploads`-ით და `ftponly` ჯგუფის ძირითად ჯგუფად?**
+
+<!-- end list -->
+
+````
+```bash
+sudo useradd -m -d /srv/ftp_root/uploads -g ftponly ftp_upload
+```
+````
+
+-----
+
+რა თქმა უნდა, წარმოგიდგენთ Linux-ის ბრძანებებს მომხმარებლების, ჯგუფების, ფაილის უფლებებისა და ატრიბუტების სამართავად:
+
+-----
+
+### მომხმარებლის და ჯგუფის მართვა (გაგრძელება)
+
+112. **როგორ წაშლით მომხმარებელ `deactivated_user`-ს სისტემიდან, მისი საშინაო დირექტორიისა და ყველა მისი ფაილის ჩათვლით, რათა არ დარჩეს არანაირი კვალი?**
+
+<!-- end list -->
+
+````
+```bash
+sudo userdel -r deactivated_user
+```
+````
+
+113. **რომელი ბრძანებით შეამოწმებთ `/etc/shadow` ფაილის უფლებებს (permission bits) ოქტალურ ფორმატში?**
+
+<!-- end list -->
+
+````
+```bash
+sudo stat -c "%a" /etc/shadow
+```
+````
+
+114. **თქვენ გაქვთ დირექტორია `/home/user_profiles`. როგორ დააყენებთ მასზე Sticky Bit-ს და მიანიჭებთ უფლებებს `rwxrwxrwt`-ზე, რათა მხოლოდ ფაილის მფლობელმა ან root-მა შეძლოს წაშლა?**
+
+<!-- end list -->
+
+````
+```bash
+sudo chmod 1777 /home/user_profiles
+```
+````
+
+115. **როგორ შეცვლით მომხმარებელ `jenkins`-ის ძირითად ჯგუფს `ci_users`-ზე და დაამატებთ მას `docker` ჯგუფში, ისე რომ მისი ყველა სხვა დამატებითი ჯგუფი უცვლელი დარჩეს?**
+
+<!-- end list -->
+
+````
+```bash
+sudo usermod -g ci_users -aG docker jenkins
+```
+````
+
+116. **რომელი ბრძანებით წაშლით მომხმარებელ `old_service`-ს მისი საშინაო დირექტორიის გარეშე, მაგრამ დარწმუნდებით, რომ მისი UID აღარ იქნება გამოყენებული ახალი მომხმარებლისთვის?**
+
+<!-- end list -->
+
+````
+```bash
+sudo userdel old_service
+```
+*`userdel` ბრძანება ნაგულისხმევად არ ახდენს UID-ის ხელახლა გამოყენებას. წაშლილი მომხმარებლის UID რჩება `/etc/passwd` ფაილში (თუმცა მომხმარებლის ჩანაწერი იშლება), სანამ ახალი მომხმარებელი არ შეიქმნება სპეციფიკური UID-ის მითითებით, ან სისტემა არ გადატვირთავს UID-ის მინიჭებას.*
+````
+
+117. **თქვენ გჭირდებათ, რომ `/usr/local/bin/health_check` სკრიპტს ჰქონდეს SetGID (SGID) ბიტი, შესრულების უფლება მხოლოდ ჯგუფისთვის, და წაკითხვის უფლება ყველასთვის. დაწერეთ ერთი ბრძანება.**
+
+<!-- end list -->
+
+````
+```bash
+sudo chmod 2554 /usr/local/bin/health_check
+```
+````
+
+118. **როგორ შეამოწმებთ ყველა მომხმარებლის ჩამონათვალს, რომელთაც არ აქვთ Shell (მაგალითად, `/sbin/nologin` ან `/bin/false`)?**
+
+<!-- end list -->
+
+````
+```bash
+getent passwd | grep -E '(/sbin/nologin|/bin/false)$' | awk -F: '{print $1}'
+```
+````
+
+119. **რომელი ბრძანებით განბლოკავთ მომხმარებელ `dormant_user`-ის ანგარიშს (რომლის პაროლი დაბლოკილია `passwd -l`-ით)?**
+
+<!-- end list -->
+
+````
+```bash
+sudo passwd -u dormant_user
+```
+````
+
+120. **როგორ შექმნით ახალ ჯგუფს `external_access` და გააწევრიანებთ მასში მომხმარებლებს `partner1` და `partner2`?**
+
+<!-- end list -->
+
+````
+```bash
+sudo groupadd external_access
+sudo usermod -aG external_access partner1
+sudo usermod -aG external_access partner2
+```
+````
+
+-----
+
+bash script 1
+
+დაწერეთ Bash სკრიპტი, რომელიც შეამოწმებს სისტემაში არსებული
+მომხმარებლების რაოდენობას. შემდეგ შექმნის report.txt ფაილს, სადაც ჩაწერს
+თითოეული მომხმარებლის სახელს, მათ home დირექტორიას და შელის ტიპს. ასევე
+ფაილის ბოლოში დაამატებს მომხმარებლების საერთო რაოდენობას.
+ნებისმიერ შემთხვევაში script ფაილში მიუთითეთ თქვენი სახელი როგორც
+ფაილის შემქმნელის და ასევე დოკუმენტაციისთვის სკრიპტშივე აღწერეთ
+შესრულებული ოპერაციები. მუშა სკრიპტი შეგიძლიათ ფაილის სახით თან დაურთოთ
+საგამოცდო ფაილს.
+
+    #!/bin/bash
+
+# Script Name: user_report.sh
+# Author: Gemini AI
+# Date: 2025-07-12
+# Description: This script generates a report of all system users,
+#              including their username, home directory, and shell type.
+#              The report is saved to report.txt and includes the total
+#              number of users.
+
+# Define the report file
+REPORT_FILE="report.txt"
+
+# Clear the report file if it exists, or create it
+> "$REPORT_FILE"
+
+# Add header to the report
+echo "=== User Report ===" >> "$REPORT_FILE"
+echo "Generated on: $(date)" >> "$REPORT_FILE"
+echo "-------------------" >> "$REPORT_FILE"
+echo "Username | Home Directory | Shell Type" >> "$REPORT_FILE"
+echo "-------------------------------------" >> "$REPORT_FILE"
+
+# Initialize user counter
+USER_COUNT=0
+
+# Iterate through each user in /etc/passwd
+# -F: sets the field separator to :
+# {print $1, $6, $7} prints username (field 1), home directory (field 6), and shell (field 7)
+while IFS=: read -r username _ uid gid _ home_dir shell; do
+    # Skip system accounts (UID less than 1000, adjust as needed for your system)
+    if [ "$uid" -ge 1000 ]; then
+        printf "%-10s | %-15s | %s\n" "$username" "$home_dir" "$shell" >> "$REPORT_FILE"
+        ((USER_COUNT++))
+    fi
+done < /etc/passwd
+
+# Add total user count to the report
+echo "-------------------------------------" >> "$REPORT_FILE"
+echo "Total active users: $USER_COUNT" >> "$REPORT_FILE"
+echo "=== End of Report ===" >> "$REPORT_FILE"
+
+echo "User report generated successfully in $REPORT_FILE."
+
+
+    bash script 2
+
+დაწერეთ Bash სკრიპტი, რომელიც შეამოწმებს სისტემის მეხსიერების გამოყენებას.
+თუ თავისუფალი მეხსიერება 20%-ზე ნაკლებია, შექმნის გაფრთხილების ფაილს
+warning.log-ს და ჩაწერს შესაბამის შეტყობინებას თარიღთან ერთად.
+ნებისმიერ შემთხვევაში script ფაილში მიუთითეთ თქვენი სახელი როგორც
+ფაილის შემქმნელის და ასევე დოკუმენტაციისთვის სკრიპტშივე აღწერეთ
+შესრულებული ოპერაციები. მუშა სკრიპტი შეგიძლიათ ფაილის სახით თან დაურთოთ
+საგამოცდო ფაილს.
+
+    #!/bin/bash
+
+# Script Name: memory_monitor.sh
+# Author: Gemini AI
+# Date: 2025-07-12
+# Description: This script monitors system memory usage.
+#              If free memory falls below 20%, it creates or appends
+#              a warning message with a timestamp to warning.log.
+
+# Define warning log file
+WARNING_LOG="warning.log"
+
+# Define the memory threshold (e.g., 20 for 20%)
+MEMORY_THRESHOLD=20
+
+# Get total and free memory in kilobytes
+# `free -k` outputs memory in KB
+# `awk '/Mem:/ {print $2, $4}'` extracts total and free memory
+MEM_INFO=$(free -k | awk '/Mem:/ {print $2, $4}')
+TOTAL_MEMORY_KB=$(echo "$MEM_INFO" | awk '{print $1}')
+FREE_MEMORY_KB=$(echo "$MEM_INFO" | awk '{print $2}')
+
+# Calculate free memory percentage
+# Use bc for floating point arithmetic
+FREE_PERCENTAGE=$(echo "scale=2; ($FREE_MEMORY_KB * 100) / $TOTAL_MEMORY_KB" | bc)
+
+# Convert to integer for comparison
+FREE_PERCENTAGE_INT=${FREE_PERCENTAGE%.*}
+
+# Check if free memory is below the threshold
+if (( FREE_PERCENTAGE_INT < MEMORY_THRESHOLD )); then
+    WARNING_MESSAGE="[$(date '+%Y-%m-%d %H:%M:%S')] WARNING: Free memory is low ($FREE_PERCENTAGE% available). Total: $(($TOTAL_MEMORY_KB/1024))MB, Free: $(($FREE_MEMORY_KB/1024))MB."
+    echo "$WARNING_MESSAGE" >> "$WARNING_LOG"
+    echo "Low memory warning issued. Check $WARNING_LOG"
+else
+    echo "Memory usage is normal ($FREE_PERCENTAGE% free)."
+fi
+
+
+    bash script 3
+
+დაწერეთ bash სკრიპტი რომელიც შექმნის /srv დირექტორიის სარეზერვო ასლს
+(backup-ს) და ჩაწერს მას ~/backup დირექტორიაში (ასეთი დირექტორიის არ არსებობის
+შემთხვევაში ჯერ შეიქმნას ის). სარეზერვო ასლი უნდა იყოს წარმოდგენილი სახელით
+რომელიც შეებამება დროს რომელიც შექმნის მომენტში იყო. ამასთან უნდა მოხდეს ამ
+ფაილის არქივაცია და შეკუმშვა ერთდროულად tar.gz ფორმატში. cron-ის საშუალებით
+სკრიპტი გაეშვას ყოველ შაბათ დღეს ღამის 00:00 წუთზე. ამისთვის დაგჭირდებათ
+crontab-ის ფაილის რედაქტირება.
+ნებისმიერ შემთხვევაში script ფაილში მიუთითეთ თქვენი სახელი როგორც
+ფაილის შემქმნელის და ასევე დოკუმენტაციისთვის სკრიპტშივე აღწერეთ
+შესრულებული ოპერაციები. მუშა სკრიპტი შეგიძლიათ ფაილის სახით თან დაურთოთ
+საგამოცდო ფაილს.
+
+    #!/bin/bash
+
+# Script Name: srv_backup.sh
+# Author: Gemini AI
+# Date: 2025-07-12
+# Description: This script creates a compressed tarball backup of the /srv directory.
+#              The backup is named with a timestamp and saved in the ~/backup directory.
+#              Designed to be run via cron.
+
+# Define source and destination directories
+SOURCE_DIR="/srv"
+BACKUP_DIR="$HOME/backup"
+
+# Create backup directory if it doesn't exist
+mkdir -p "$BACKUP_DIR"
+
+# Get current timestamp for the backup file name
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+BACKUP_FILE="$BACKUP_DIR/srv_backup_$TIMESTAMP.tar.gz"
+
+# Create the compressed tarball backup
+# -c: Create a new archive
+# -z: Compress the archive with gzip
+# -v: Verbose output (show files being added) - can be removed if running silently via cron
+# -f: Specify the archive file name
+# -P: Do not strip leading '/' from file names (preserves absolute paths)
+echo "Starting backup of $SOURCE_DIR to $BACKUP_FILE..."
+sudo tar -czf "$BACKUP_FILE" -P "$SOURCE_DIR" &>> "$BACKUP_DIR/backup_log.log"
+
+if [ $? -eq 0 ]; then
+    echo "Backup completed successfully for $SOURCE_DIR." | tee -a "$BACKUP_DIR/backup_log.log"
+else
+    echo "Backup failed for $SOURCE_DIR. Check log for details." | tee -a "$BACKUP_DIR/backup_log.log"
+fi
+
+
+    bash script 4
+
+დაწერეთ bash სკრიპტი რომელიც შეამოწმებს linux ოპერაციული სისტემის
+დისტრიბუციის ვერსიას. დისტრიბუტივის დადგენის შემდეგ გაუშვებს სისტემის
+განახლებას დისტრიბუტივისთვის შესაბამისი ბრძანების მიხედვით. ამასთან ერთად
+განახლების პროცესი არ აისახოს ტერმინალში და ჩაიწეროს მხოლოდ update_log.log
+ფაილში (რომელიც სასურველია განთავსდეს სპეციალურ დირექტორიაში, სახელი თქვენ
+შეურჩიეთ ) (დაგჭირდებათ პირობის ოპერატორების გამოყენება). ოპერაცია
+დასრულდეს შეტყობინებით: „სისტემის განახლება წარმატებით განხორციელდა“.
+სურვილისამებრ შეგიძლიათ დაამატოთ ფუნქციები და გააფორმოთ სკრიპტის ფაილი.
+ნებისმიერ შემთხვევაში script ფაილში მიუთითეთ თქვენი სახელი როგორც
+ფაილის შემქმნელის და ასევე დოკუმენტაციისთვის სკრიპტშივე აღწერეთ
+შესრულებული ოპერაციები. მუშა სკრიპტი შეგიძლიათ ფაილის სახით თან დაურთოთ
+საგამოცდო ფაილს.
+
+    #!/bin/bash
+
+# Script Name: system_update.sh
+# Author: Gemini AI
+# Date: 2025-07-12
+# Description: This script identifies the Linux distribution and
+#              performs a system update accordingly. All update output
+#              is redirected to a log file, and a success/failure message
+#              is displayed upon completion.
+
+# Define log directory and file
+LOG_DIR="/var/log/system_updates"
+LOG_FILE="$LOG_DIR/update_log.log"
+
+# Create log directory if it doesn't exist
+sudo mkdir -p "$LOG_DIR"
+sudo chmod 700 "$LOG_DIR" # Ensure only root can read/write logs
+
+echo "Starting system update process..." | tee -a "$LOG_FILE"
+echo "Log file: $LOG_FILE"
+
+# Detect distribution
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    DISTRO=$ID
+elif type lsb_release >/dev/null 2>&1; then
+    DISTRO=$(lsb_release -si)
+elif [ -f /etc/redhat-release ]; then
+    DISTRO="rhel"
+elif [ -f /etc/debian_version ]; then
+    DISTRO="debian"
+else
+    DISTRO=$(uname -s)
+fi
+
+# Convert distro name to lowercase for easier comparison
+DISTRO=$(echo "$DISTRO" | tr '[:upper:]' '[:lower:]')
+
+# Perform update based on distribution
+case "$DISTRO" in
+    ubuntu|debian)
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Detected $DISTRO. Running apt update and upgrade." | tee -a "$LOG_FILE"
+        sudo apt update &>> "$LOG_FILE"
+        if [ $? -eq 0 ]; then
+            sudo apt upgrade -y &>> "$LOG_FILE"
+            if [ $? -eq 0 ]; then
+                echo "System update successfully completed." | tee -a "$LOG_FILE"
+            else
+                echo "System upgrade failed. Check $LOG_FILE for details." | tee -a "$LOG_FILE"
+            fi
+        else
+            echo "Apt update failed. Check $LOG_FILE for details." | tee -a "$LOG_FILE"
+        fi
+        ;;
+    centos|rhel|fedora)
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Detected $DISTRO. Running yum/dnf update." | tee -a "$LOG_FILE"
+        if type dnf >/dev/null 2>&1; then
+            sudo dnf update -y &>> "$LOG_FILE"
+        else
+            sudo yum update -y &>> "$LOG_FILE"
+        fi
+        if [ $? -eq 0 ]; then
+            echo "System update successfully completed." | tee -a "$LOG_FILE"
+        else
+            echo "System update failed. Check $LOG_FILE for details." | tee -a "$LOG_FILE"
+        fi
+        ;;
+    arch)
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Detected $DISTRO. Running pacman -Syu." | tee -a "$LOG_FILE"
+        sudo pacman -Syu --noconfirm &>> "$LOG_FILE"
+        if [ $? -eq 0 ]; then
+            echo "System update successfully completed." | tee -a "$LOG_FILE"
+        else
+            echo "System update failed. Check $LOG_FILE for details." | tee -a "$LOG_FILE"
+        fi
+        ;;
+    *)
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Unknown distribution ($DISTRO). Cannot perform automated update." | tee -a "$LOG_FILE"
+        echo "Please update manually."
+        ;;
+esac
+
+echo "System update process finished."
+
+
+    bash script 5
+
+დაწერეთ bash სკრიპტი რომელიც შექმნის /usr დირექტორიის სარეზერვო ასლს
+(backup-ს) და ჩაწერს მას ~/backup დირექტორიაში (ასეთი დირექტორიის არ არსებობის
+შემთხვევაში ჯერ შეიქმნას ის). სარეზერვო ასლი უნდა იყოს წარმოდგენილი სახელით
+რომელიც შეებამება დროს რომელიც შექმნის მომენტში იყო. ამასთან უნდა მოხდეს ამ
+ფაილის არქივაცია და შეკუმშვა ერთდროულად tar.gz ფორმატში. cron-ის საშუალებით
+
+სკრიპტი გაეშვას ყოველ პარასკევს ღამის 00:00 წუთზე. ამისთვის დაგჭირდებათ crontab-
+ის ფაილის რედაქტირება.
+
+ნებისმიერ შემთხვევაში script ფაილში მიუთითეთ თქვენი სახელი როგორც
+ფაილის შემქმნელის და ასევე დოკუმენტაციისთვის სკრიპტშივე აღწერეთ
+შესრულებული ოპერაციები. მუშა სკრიპტი შეგიძლიათ ფაილის სახით თან დაურთოთ
+საგამოცდო ფაილს.
+
+    #!/bin/bash
+
+# Script Name: usr_backup.sh
+# Author: Gemini AI
+# Date: 2025-07-12
+# Description: This script creates a compressed tarball backup of the /usr directory.
+#              The backup is named with a timestamp and saved in the ~/backup directory.
+#              Designed to be run via cron.
+
+# Define source and destination directories
+SOURCE_DIR="/usr"
+BACKUP_DIR="$HOME/backup"
+
+# Create backup directory if it doesn't exist
+mkdir -p "$BACKUP_DIR"
+
+# Get current timestamp for the backup file name
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+BACKUP_FILE="$BACKUP_DIR/usr_backup_$TIMESTAMP.tar.gz"
+
+# Create the compressed tarball backup
+# -c: Create a new archive
+# -z: Compress the archive with gzip
+# -v: Verbose output (show files being added) - can be removed if running silently via cron
+# -f: Specify the archive file name
+# -P: Do not strip leading '/' from file names (preserves absolute paths)
+echo "Starting backup of $SOURCE_DIR to $BACKUP_FILE..."
+sudo tar -czf "$BACKUP_FILE" -P "$SOURCE_DIR" &>> "$BACKUP_DIR/backup_log.log"
+
+if [ $? -eq 0 ]; then
+    echo "Backup completed successfully for $SOURCE_DIR." | tee -a "$BACKUP_DIR/backup_log.log"
+else
+    echo "Backup failed for $SOURCE_DIR. Check log for details." | tee -a "$BACKUP_DIR/backup_log.log"
+fi
+
+
+    bash script 5
+
+დაწერეთ bash სკრიპტი რომელიც თქვენს მიერ მითითებულ მისამართზე
+დაახარისხებს სხვადასხვა ტიპის ფაილებს (მაგალითად: .txt, .jpg, .mp3, .avi ). არ
+არსებობის შემთხვევაში შექმნის შესაბამის საქაღალდეებს მომხმარებლის Documents
+დირექტორიაში სახელწოდებით DOCS, PHOTOS, MUSICS, VIDEOS და გადაანაწილებს
+ფაილებს მათი ტიპის მიხედვით ამ დირექტორიებში. უცნობი ფაილის ტიპის პოვნის
+შემთხვევაში გამოიტანოს შეტყობინე „უცნობი ტიპის ფაილი“ და მიეთითოს რომელ
+ფაილს გულისხმობს. (სხვადასხვა ტიპის ფაილების შესაქმენლად და სკრიპტის
+დასატესტად შექმენით ცარიელი ფაილები touch-ის გამოყენებით).
+ნებისმიერ შემთხვევაში script ფაილში მიუთითეთ თქვენი სახელი როგორც
+ფაილის შემქმნელის და ასევე დოკუმენტაციისთვის სკრიპტშივე აღწერეთ
+შესრულებული ოპერაციები. მუშა სკრიპტი შეგიძლიათ ფაილის სახით თან დაურთოთ
+საგამოცდო ფაილს.
+
+    #!/bin/bash
+
+# Script Name: file_organizer.sh
+# Author: Gemini AI
+# Date: 2025-07-12
+# Description: This script organizes files by type (e.g., .txt, .jpg)
+#              from a specified source directory into categorized folders
+#              within the user's Documents directory. It handles unknown file types.
+
+# --- Configuration ---
+SOURCE_DIRECTORY="/path/to/your/files" # <--- Specify the source directory here (e.g., /home/user/Downloads)
+DEST_BASE_DIR="$HOME/Documents"
+
+# Define destination directories
+DOCS_DIR="$DEST_BASE_DIR/DOCS"
+PHOTOS_DIR="$DEST_BASE_DIR/PHOTOS"
+MUSICS_DIR="$DEST_BASE_DIR/MUSICS"
+VIDEOS_DIR="$DEST_BASE_DIR/VIDEOS"
+# --- End Configuration ---
+
+echo "Starting file organization from: $SOURCE_DIRECTORY"
+
+# Create destination directories if they don't exist
+mkdir -p "$DOCS_DIR" "$PHOTOS_DIR" "$MUSICS_DIR" "$VIDEOS_DIR"
+
+# Check if the source directory exists
+if [ ! -d "$SOURCE_DIRECTORY" ]; then
+    echo "Error: Source directory '$SOURCE_DIRECTORY' does not exist."
+    exit 1
+fi
+
+# Iterate through files in the source directory
+for FILE in "$SOURCE_DIRECTORY"/*; do
+    if [ -f "$FILE" ]; then # Check if it's a regular file
+        FILENAME=$(basename "$FILE")
+        EXTENSION="${FILENAME##*.}" # Get file extension
+
+        case "$EXTENSION" in
+            txt|doc|docx|pdf|odt|rtf)
+                mv "$FILE" "$DOCS_DIR/"
+                echo "Moved $FILENAME to $DOCS_DIR"
+                ;;
+            jpg|jpeg|png|gif|bmp|tiff)
+                mv "$FILE" "$PHOTOS_DIR/"
+                echo "Moved $FILENAME to $PHOTOS_DIR"
+                ;;
+            mp3|wav|flac|aac|ogg)
+                mv "$FILE" "$MUSICS_DIR/"
+                echo "Moved $FILENAME to $MUSICS_DIR"
+                ;;
+            mp4|avi|mov|mkv|wmv)
+                mv "$FILE" "$VIDEOS_DIR/"
+                echo "Moved $FILENAME to $VIDEOS_DIR"
+                ;;
+            *)
+                echo "Warning: Unknown file type for '$FILENAME'. Skipping."
+                ;;
+        esac
+    fi
+done
+
+echo "File organization complete."
+
+
+
+    bash script 6
+
+დაწერეთ bash სკრიპტი რომელიც შექმნის /var/lib/mysql დირექტორიის
+სარეზერვო ასლს (backup-ს) და ჩაწერს მას ~/backup დირექტორიაში (ასეთი
+დირექტორიის არ არსებობის შემთხვევაში ჯერ შეიქმნას ის). სარეზერვო ასლი უნდა
+იყოს წარმოდგენილი სახელით რომელიც შეებამება დროს რომელიც შექმნის მომენტში
+იყო. ამასთან უნდა მოხდეს ამ ფაილის არქივაცია და შეკუმშვა ერთდროულად tar.gz
+ფორმატში. cron-ის საშუალებით სკრიპტი გაეშვას ყოველ კვირა დღეს ღამის 00:00
+წუთზე. ამისთვის დაგჭირდებათ crontab-ის ფაილის რედაქტირება.
+ნებისმიერ შემთხვევაში script ფაილში მიუთითეთ თქვენი სახელი როგორც
+ფაილის შემქმნელის და ასევე დოკუმენტაციისთვის სკრიპტშივე აღწერეთ
+შესრულებული ოპერაციები. მუშა სკრიპტი შეგიძლიათ ფაილის სახით თან დაურთოთ
+საგამოცდო ფაილს.
+
+    #!/bin/bash
+
+# Script Name: mysql_backup.sh
+# Author: Gemini AI
+# Date: 2025-07-12
+# Description: This script creates a compressed tarball backup of the /var/lib/mysql directory.
+#              The backup is named with a timestamp and saved in the ~/backup directory.
+#              Designed to be run via cron.
+
+# Define source and destination directories
+SOURCE_DIR="/var/lib/mysql"
+BACKUP_DIR="$HOME/backup"
+
+# Create backup directory if it doesn't exist
+mkdir -p "$BACKUP_DIR"
+
+# Get current timestamp for the backup file name
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+BACKUP_FILE="$BACKUP_DIR/mysql_backup_$TIMESTAMP.tar.gz"
+
+# Check if the source directory exists and is readable
+if [ ! -d "$SOURCE_DIR" ]; then
+    echo "Error: Source directory '$SOURCE_DIR' does not exist." | tee -a "$BACKUP_DIR/backup_log.log"
+    exit 1
+fi
+
+# Create the compressed tarball backup
+# -c: Create a new archive
+# -z: Compress the archive with gzip
+# -f: Specify the archive file name
+# -P: Do not strip leading '/' from file names (preserves absolute paths)
+echo "Starting backup of $SOURCE_DIR to $BACKUP_FILE..." | tee -a "$BACKUP_DIR/backup_log.log"
+sudo tar -czf "$BACKUP_FILE" -P "$SOURCE_DIR" &>> "$BACKUP_DIR/backup_log.log"
+
+if [ $? -eq 0 ]; then
+    echo "Backup completed successfully for $SOURCE_DIR." | tee -a "$BACKUP_DIR/backup_log.log"
+else
+    echo "Backup failed for $SOURCE_DIR. Check log for details." | tee -a "$BACKUP_DIR/backup_log.log"
+fi
+
+
+    bash script 7
+
+დაწერეთ bash სკრიპტი რომელიც შექმნის /var/lib/postgresql დირექტორიის
+სარეზერვო ასლს (backup-ს) და ჩაწერს მას ~/backup დირექტორიაში (ასეთი
+დირექტორიის არ არსებობის შემთხვევაში ჯერ შეიქმნას ის). სარეზერვო ასლი უნდა
+იყოს წარმოდგენილი სახელით რომელიც შეებამება დროს რომელიც შექმნის მომენტში
+იყო. ამასთან უნდა მოხდეს ამ ფაილის არქივაცია და შეკუმშვა ერთდროულად tar.gz
+ფორმატში. cron-ის საშუალებით სკრიპტი გაეშვას ყოველ კვირა დღეს ღამის 00:00
+წუთზე. ამისთვის დაგჭირდებათ crontab-ის ფაილის რედაქტირება.
+ნებისმიერ შემთხვევაში script ფაილში მიუთითეთ თქვენი სახელი როგორც
+ფაილის შემქმნელის და ასევე დოკუმენტაციისთვის სკრიპტშივე აღწერეთ
+შესრულებული ოპერაციები. მუშა სკრიპტი შეგიძლიათ ფაილის სახით თან დაურთოთ
+საგამოცდო ფაილს.
+
+    #!/bin/bash
+
+# Script Name: file_checker_creator.sh
+# Author: Gemini AI
+# Date: 2025-07-12
+# Description: This script checks for the existence of a specified file or directory.
+#              If it doesn't exist, it prompts the user to create it in the Documents folder.
+
+# Define the base directory for creation
+DEST_DIR="$HOME/Documents"
+
+echo "=== File/Directory Existence Checker ==="
+echo "Please enter the full path to the file or directory you want to check:"
+read -r CHECK_PATH
+
+# Check if the path exists
+if [ -e "$CHECK_PATH" ]; then
+    if [ -f "$CHECK_PATH" ]; then
+        echo "File '$CHECK_PATH' exists."
+    elif [ -d "$CHECK_PATH" ]; then
+        echo "Directory '$CHECK_PATH' exists."
+    else
+        echo "Path '$CHECK_PATH' exists, but it's neither a regular file nor a directory (e.g., symlink, device file)."
+    fi
+else
+    echo "Path '$CHECK_PATH' does not exist."
+    echo "Do you want to create it in your Documents folder? (yes/no)"
+    read -r USER_CHOICE
+
+    USER_CHOICE=$(echo "$USER_CHOICE" | tr '[:upper:]' '[:lower:]') # Convert to lowercase
+
+    if [ "$USER_CHOICE" == "yes" ]; then
+        # Extract just the name from the input path
+        NEW_NAME=$(basename "$CHECK_PATH")
+        NEW_PATH="$DEST_DIR/$NEW_NAME"
+
+        echo "Is this a directory or a file? (d/f)"
+        read -r TYPE_CHOICE
+        TYPE_CHOICE=$(echo "$TYPE_CHOICE" | tr '[:upper:]' '[:lower:]')
+
+        if [ "$TYPE_CHOICE" == "d" ]; then
+            mkdir -p "$NEW_PATH"
+            if [ $? -eq 0 ]; then
+                echo "Directory '$NEW_PATH' successfully created."
+            else
+                echo "Failed to create directory '$NEW_PATH'."
+            fi
+        elif [ "$TYPE_CHOICE" == "f" ]; then
+            touch "$NEW_PATH"
+            if [ $? -eq 0 ]; then
+                echo "File '$NEW_PATH' successfully created."
+            else
+                echo "Failed to create file '$NEW_PATH'."
+            fi
+        else
+            echo "Invalid choice. Skipping creation."
+        fi
+    else
+        echo "Program terminated. No file/directory created."
+    fi
+fi
+
+echo "=== End of Script ==="
+
+
+    bash script 8
+
+დაწერეთ bash სკრიპტი რომელიც მოგცემთ შესაძლებლობას შეამოწმოთ არსებობს
+თუ არა კონკრეტული სახელის ფაილი კონკრეტულ მისამართზე. (შეგიძლიათ როგორც
+დირექტორია ასევე ჩვეულებრივი ფაილი გამოიყენოთ). თუ არსებოს გამოიტანოს
+შეტყობინება რომ ფაილი არსებობს და თუ არ არსებობს მაშინ-ფაილი არ არსებობს და
+გკითხოთ გსურთ თუ არა შექმნათ შესაბამისი სახელწოდების დირექტორია/ფაილი. „yes”
+პასუხის შემთხვევაში შეიქმნას დირექტორია/ფაილი მომხმარებლის Documents
+საქაღალდეში და დაიწეროს რომ „ფაილი წარმატებით შეიქმნა“. სხვა შემთხვევაში
+პროგრამა დაიხუროს. (თქვენი სურვილისამებრ შეგიძლიათ დაამატოთ სხვადასხვა
+ფუნქციები, მაგალითად დაყოვნებები, შეტყობინებები ეკრანზე და ა.შ).
+ნებისმიერ შემთხვევაში script ფაილში მიუთითეთ თქვენი სახელი როგორც
+ფაილის შემქმნელის და ასევე დოკუმენტაციისთვის სკრიპტშივე აღწერეთ
+შესრულებული ოპერაციები. მუშა სკრიპტი შეგიძლიათ ფაილის სახით თან დაურთოთ
+საგამოცდო ფაილს.
+
+    #!/bin/bash
+
+# Script Name: file_checker_creator.sh
+# Author: Gemini AI
+# Date: 2025-07-12
+# Description: This script checks for the existence of a specified file or directory.
+#              If it doesn't exist, it prompts the user to create it in the Documents folder.
+
+# Define the base directory for creation
+DEST_DIR="$HOME/Documents"
+
+echo "=== File/Directory Existence Checker ==="
+echo "Please enter the full path to the file or directory you want to check:"
+read -r CHECK_PATH
+
+# Check if the path exists
+if [ -e "$CHECK_PATH" ]; then
+    if [ -f "$CHECK_PATH" ]; then
+        echo "File '$CHECK_PATH' exists."
+    elif [ -d "$CHECK_PATH" ]; then
+        echo "Directory '$CHECK_PATH' exists."
+    else
+        echo "Path '$CHECK_PATH' exists, but it's neither a regular file nor a directory (e.g., symlink, device file)."
+    fi
+else
+    echo "Path '$CHECK_PATH' does not exist."
+    echo "Do you want to create it in your Documents folder? (yes/no)"
+    read -r USER_CHOICE
+
+    USER_CHOICE=$(echo "$USER_CHOICE" | tr '[:upper:]' '[:lower:]') # Convert to lowercase
+
+    if [ "$USER_CHOICE" == "yes" ]; then
+        # Extract just the name from the input path
+        NEW_NAME=$(basename "$CHECK_PATH")
+        NEW_PATH="$DEST_DIR/$NEW_NAME"
+
+        echo "Is this a directory or a file? (d/f)"
+        read -r TYPE_CHOICE
+        TYPE_CHOICE=$(echo "$TYPE_CHOICE" | tr '[:upper:]' '[:lower:]')
+
+        if [ "$TYPE_CHOICE" == "d" ]; then
+            mkdir -p "$NEW_PATH"
+            if [ $? -eq 0 ]; then
+                echo "Directory '$NEW_PATH' successfully created."
+            else
+                echo "Failed to create directory '$NEW_PATH'."
+            fi
+        elif [ "$TYPE_CHOICE" == "f" ]; then
+            touch "$NEW_PATH"
+            if [ $? -eq 0 ]; then
+                echo "File '$NEW_PATH' successfully created."
+            else
+                echo "Failed to create file '$NEW_PATH'."
+            fi
+        else
+            echo "Invalid choice. Skipping creation."
+        fi
+    else
+        echo "Program terminated. No file/directory created."
+    fi
+fi
+
+echo "=== End of Script ==="
+
 </body>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="index.js"></script> -->
 </html>
